@@ -4,4 +4,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    dict={}
+    dict['register_message1'] = '注册前请阅读'
+    dict['register_message2'] = '用户须知'
+    return render(request, 'index.html',dict)
