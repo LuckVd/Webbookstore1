@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^images/(?P<path>.*)$', serve, {'document_root': 'shopapp/static/images'}),
     url(r'^register/$', register.register),
+    url(r'^shop.html/$', views.shop,name='shop'),
 
 ]

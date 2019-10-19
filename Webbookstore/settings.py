@@ -123,9 +123,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'shopapp\static')
 
-STATICFILES_DIRS = [
-    ("css", os.path.join(STATIC_ROOT, 'css')),
-   # ("images", os.path.join(STATIC_ROOT, 'images')),
-    ("js", os.path.join(STATIC_ROOT, 'js')),
-    ("gif", os.path.join(STATIC_ROOT, 'images')),
-]
+STATICFILES_DIRS = (
+    ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ),
+    ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
+    ('images',os.path.join(STATIC_ROOT,'images').replace('\\','/') ),
+    ('upload',os.path.join(STATIC_ROOT,'upload').replace('\\','/') ),
+)

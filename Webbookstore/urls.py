@@ -21,5 +21,4 @@ from Webbookstore import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('shopapp.urls')),
-    url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 ]
