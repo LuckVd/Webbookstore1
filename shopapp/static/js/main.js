@@ -1,3 +1,5 @@
+ src="{% static 'js/jquery.js' %}"
+
 jQuery( document ).ready(function( $ ) {
 "use strict"
 
