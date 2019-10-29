@@ -19,7 +19,9 @@ def shop(request):
 
 
 def bestsell(request):
-    name_dict = "123"
+    postdata=request.POST.get("data")
+    name_dict = {}
+    name_dict['name']="name"
     print("right2")
-#    return JsonResponse(name_dict)
-    return  HttpResponse("hello")
+    return JsonResponse(name_dict)
+   # return  HttpResponse("hello")

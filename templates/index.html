@@ -32,27 +32,12 @@
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400italic,400,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900italic,900,100italic,100' rel='stylesheet' type='text/css'>
 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
 <!-- JavaScripts -->
 <script src="{% static 'js/modernizr.js'%}"></script>
 </head>
 <body>
 
-     
-
-
-<!-- Preloader -->
-<div id="status">
-	<div id="preloader">
-		<div class="preloader position-center-center">
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-	</div>
-</div>
-<!-- Preloader -->
 
 <!-- Wrapper -->
 <div class="wrapper push-wrapper">
@@ -2231,17 +2216,16 @@
 <!-- Switcher Panel -->
 
 <!-- Java Script -->
-<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
 <script src="{% static 'js/gmap3.min.js' %}"></script>
 <script src="{% static 'js/datepicker.js' %}"></script>
 <script src="{% static 'js/contact-form.js' %}"></script>
 <script src="{% static 'js/bigslide.js' %}"></script>
 <script src="{% static 'js/3d-book-showcase.js' %}"></script>
 <script src="{% static 'js/turn.js' %}"></script>
-<script src="{% static 'js/jquery-ui.js' %}"></script>
 <script src="{% static 'js/mcustom-scrollbar.js' %}"></script>
 <script src="{% static 'js/timeliner.js' %}"></script>
 <script src="{% static 'js/parallax.js' %}"></script>
@@ -2256,7 +2240,8 @@
 <script src="{% static 'js/wow-min.js' %}"></script>
 <script src="{% static 'js/classie.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/bestsell.js' %}"></script>
+<script src="{% static 'js/sellurl.js' %}"></script>
+
 <!-- Switcher JS -->
 <script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/colorswitcher.js' %}"></script>

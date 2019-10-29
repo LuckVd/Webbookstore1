@@ -36,6 +36,7 @@ jQuery.ajaxSetup({
         url: 'bestsellurl',
         timeout : 5000,
         // contentType: "application/json",//该句代码不能加，加了之后无法POST
+        data:{hello:"hello"},
         success: function(data) {
           alert("成功");
         },
