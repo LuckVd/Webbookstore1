@@ -9,6 +9,4 @@ def bestsell(request):
     bestsell_dict['description'] = ["This is book1","This is book2","This is book3","This is book4"]
     bestsell_dict['pic_src'] = ["images/best-seller/img-01.jpg","images/best-seller/img-02.jpg",
                                 "images/best-seller/img-03.jpg","images/best-seller/img-04.jpg"]
-    print("right2")
     return JsonResponse(bestsell_dict)
-   # return  HttpResponse("hello")

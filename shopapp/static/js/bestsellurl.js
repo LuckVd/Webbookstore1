@@ -30,7 +30,7 @@ jQuery( document ).ready(function() {
             }
         }
     });
-    //这上面的代码都是为了解决跨域问题
+    //这上面的代码都是为了解决跨域问题，如果不用的话会引起跨域访问错误
 
     $.ajax({
         type: 'post',
