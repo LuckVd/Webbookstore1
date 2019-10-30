@@ -30,13 +30,24 @@ jQuery( document ).ready(function() {
             }
         }
     });
+    //这上面的代码都是为了解决跨域问题
+
     $.ajax({
         type: 'post',
         url: 'bestsellurl',
-        data: {"hello": "hello"},
         dataType: "JSON",
         success: function (data) {
             console.log("success")
+            var num_of_books=0
+             $("#tab-1").find("div.active").each(function(){
+                 $(this).find("img").attr("src",data.pic_src[num_of_books]);
+                 $(this).find("h5").find("a").text(data.name[num_of_books])
+                 $(this).find("div.product-detail").find("p").text(data.description[num_of_books])
+                 $(this).find("strong").text(data.price[num_of_books])
+                 console.log($(this).get(src))
+                 num_of_books++;
+             })
+
         },
         error: function () {
             console.log("failed")
