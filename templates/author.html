@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿ {% load staticfiles %}
+<!doctype html>
 <html class="no-js" lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,30 +9,28 @@
 <title>Bookstore HTML5 Template</title>
 
 <!-- StyleSheets -->
-<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/color-1.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/transition.css">
-
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/color-1.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/transition.css'%}">
 <!-- Online Lib -->
-<link rel="stylesheet" href="css/tether.min.css">
-<script src="js/tether.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/tether.min.css'%}">
+<script src="{% static 'js/tether.min.js'%}"></script>
 
 <!-- Switcher CSS -->
-<link href="switcher/switcher.css" rel="stylesheet" type="text/css"/> 
-<link rel="stylesheet" id="skins" href="css/default.css" type="text/css" media="all">
+<link href="{% static 'css/switcher.css'%}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" id="skins" href="{% static 'css/default.css'%}" type="text/css" media="all">
 
 <!-- FontsOnline -->
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400italic,400,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900italic,900,100italic,100' rel='stylesheet' type='text/css'>
 
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
 <!-- JavaScripts -->
-<script src="js/vendor/modernizr.js"></script>
+<script src="{% static 'js/modernizr.js'%}"></script>
 </head>
 <body>
 
@@ -817,34 +816,35 @@
 <!-- Quick View -->
 
 <!-- Java Script -->
-<script src="js/vendor/jquery.js"></script>        
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
-<script src="js/gmap3.min.js"></script>			
-<script src="js/datepicker.js"></script>					
-<script src="js/contact-form.js"></script>					
-<script src="js/bigslide.js"></script>					
-<script src="js/3d-book-showcase.js"></script>					
-<script src="js/turn.js"></script>							
-<script src="js/jquery-ui.js"></script>								
-<script src="js/mcustom-scrollbar.js"></script>					
-<script src="js/timeliner.js"></script>					
-<script src="js/parallax.js"></script>			   	 
-<script src="js/countdown.js"></script>	
-<script src="js/countTo.js"></script>		
-<script src="js/owl-carousel.js"></script>	
-<script src="js/bxslider.js"></script>	
-<script src="js/appear.js"></script>		 		
-<script src="js/sticky.js"></script>			 		
-<script src="js/prettyPhoto.js"></script>			
-<script src="js/isotope.pkgd.js"></script>					 
-<script src="js/wow-min.js"></script>			
-<script src="js/classie.js"></script>					
-<script src="js/main.js"></script>	
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/gmap3.min.js' %}"></script>
+<script src="{% static 'js/datepicker.js' %}"></script>
+<script src="{% static 'js/contact-form.js' %}"></script>
+<script src="{% static 'js/bigslide.js' %}"></script>
+<script src="{% static 'js/3d-book-showcase.js' %}"></script>
+<script src="{% static 'js/turn.js' %}"></script>
+<script src="{% static 'js/mcustom-scrollbar.js' %}"></script>
+<script src="{% static 'js/timeliner.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
+<script src="{% static 'js/countdown.js' %}"></script>
+<script src="{% static 'js/countTo.js' %}"></script>
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<script src="{% static 'js/bxslider.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/sticky.js' %}"></script>
+<script src="{% static 'js/prettyPhoto.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.js' %}"></script>
+<script src="{% static 'js/wow-min.js' %}"></script>
+<script src="{% static 'js/classie.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/bestsellurl.js' %}"></script>
 
 <!-- Switcher JS -->
-<script type="text/javascript" src="switcher/cookie.js"></script>
-<script type="text/javascript" src="switcher/colorswitcher.js"></script>
+<script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/colorswitcher.js' %}"></script>
 <!-- Switcher JS -->
 				
 </body>

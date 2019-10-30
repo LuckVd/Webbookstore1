@@ -44,7 +44,6 @@ jQuery( document ).ready(function() {
                  $(this).find("h5").find("a").text(data.name[num_of_books])
                  $(this).find("div.product-detail").find("p").text(data.description[num_of_books])
                  $(this).find("strong").text(data.price[num_of_books])
-                 console.log($(this).get(src))
                  num_of_books++;
              })
 

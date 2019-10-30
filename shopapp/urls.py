@@ -12,8 +12,12 @@ urlpatterns = [
 
     path('bestsellurl',index.bestsell),
     path('index', views.index, name='index'),
-    url(r'^images/(?P<path>.*)$', serve, {'document_root': 'shopapp/static/images'}),
+    url(r'^shop.html/$', views.shop),
+    url(r'^gallery.html/$', views.gallery),
+    url(r'^author.html/$', views.author),
+    url(r'^about.html/$', views.about),
+    url(r'images/(?P<path>.*)$', serve, {'document_root': 'shopapp/static/images'}),
     url(r'^register/$', register.register),
-    url(r'^shop.html/$', views.shop,name='shop'),
     url(r'^$', views.index, name='index'),
+    path('',index.bestsell),
 ]
