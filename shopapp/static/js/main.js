@@ -452,15 +452,7 @@ jQuery( document ).ready(function( $ ) {
         });
     }
 
-    // Quanity Box
-    $(".ddd").on("click", function () {
-        var $button = $(this);
-        var $input = $button.closest('.sp-quantity').find("input.quntity-input");
-        
-        $input.val(function(i, value) {
-            return +value + (1 * +$button.data('multi'));
-        });
-    });
+
 
     // Range slider
     if (jQuery("#slider-range").length != '') {

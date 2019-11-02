@@ -25,3 +25,6 @@ def author(request):
 
 def about(request):
     return render(request,'about.html')
+
+def cart(request):
+    return render(request,'cart.html')
