@@ -1,5 +1,6 @@
 jQuery( document ).ready(function() {
 
+
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie !== '') {
@@ -34,45 +35,42 @@ jQuery( document ).ready(function() {
     //这上面的代码都是为了解决跨域问题，如果不用的话会引起跨域访问错误
 
 
-
-
-    $("button:has(i)").click(function() {
-        $(this).closest("#cart").slideToggle();
-    })
-
-     // 添加 减少的函数实现，最后返回的是数量（不能小于1）
-    $(".ddd").on("click", function () {
-        var $button = $(this);
-        var $input = $button.closest('.sp-quantity').find("input.quntity-input");
-
-        $input.val(function(i, value) {
-            var value_r=+value + (1 * +$button.data('multi'))
-            return Math.max(value_r,1);
-        });
-    });
-
+    //获得所有作者的信息，根据个数动态添加到左边栏目
     $.ajax({
         type: 'post',
-        url: 'cart_show',
+        url: 'author_list',
         dataType: "JSON",
         success: function (data) {
-            console.log("success cart")
-            console.log(data)
-            var num_of_books=0
-             $("div.business").each(function(){
-                 $(this).find("img").attr("src",data.pic_src[num_of_books]);
-                 $(this).find("h5").text(data.name[num_of_books])
-                 $(this).find("div.detail").find("span").text(data.description[num_of_books])
-                 $(this).find("strong").text(data.price[num_of_books])
-                 $(this).find("input").val(data.num[num_of_books])
-                 num_of_books++;
-             })
+            var author_len = data.name.length;
+            console.log(author_len);
+            for(var i=0;i<author_len;i++) {
+             $('#Author').append('<li><a a href="#">' + data.name[i] + '</a></li> ');
+          }
 
         },
         error: function () {
             console.log("failed")
         }
     });
+    //获得书籍信息
+    $.ajax({
+        type: 'post',
+        url: 'book_list',
+        dataType: "JSON",
+        success: function (data) {
+             var num_of_books=0
+             $("#book_list").find("div.product-box").each(function(){
+                 $(this).find("img").attr("src",data.pic_src[num_of_books]);
+                 $(this).find("h5").find("a").text(data.name[num_of_books])
+                 $(this).find("div.product-detail").find("p").text(data.description[num_of_books])
+                 $(this).find("strong").text(data.price[num_of_books])
+                 num_of_books++;
+             })
 
-});
+        },
+        error: function () {
+            console.log("book_detail_failed")
+        }
+    });
 
+})
