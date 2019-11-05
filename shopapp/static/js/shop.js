@@ -57,7 +57,7 @@ jQuery( document ).ready(function() {
                 if(typeof(data.pic_src[i])=="undefined"){$(this).hide()}
                 else{
                     $(this).show();
-                    $(this).find("img").attr("src",data.pic_src[i]);
+                $(this).find("img").attr("src",data.pic_src[i]);
                 $(this).find("h5").find("a").text(data.name[i])
                 $(this).find("div.product-detail").find("p").text(data.description[i]);
                 $(this).find("strong").text(data.price[i]);
