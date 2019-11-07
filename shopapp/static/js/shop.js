@@ -38,12 +38,13 @@ jQuery( document ).ready(function() {
     //获得所有作者的信息，根据个数动态添加到左边栏目
     $.ajax({
         type: 'post',
-        url: 'author_list',
+        url: '/search/',
+         data: {table: 'author'},
         dataType: "JSON",
         success: function (data) {
-            var author_len = data.name.length;
+            var author_len = data.author_name.length;
             for(var i=0;i<author_len;i++) {
-             $('#Author').append('<li><a a href="#">' + data.name[i] + '</a></li> ');
+             $('#Author').append('<li><a a href="#">' + data.author_name[i] + '</a></li> ');
           }
 
         },
@@ -54,13 +55,13 @@ jQuery( document ).ready(function() {
 
     function display_bolist(data,i) {
         $("#book_list").find("div.product-box").each(function(){
-                if(typeof(data.pic_src[i])=="undefined"){$(this).hide()}
+                if(typeof(data.book_image[i])=="undefined"){$(this).hide()}
                 else{
                     $(this).show();
-                $(this).find("img").attr("src",data.pic_src[i]);
-                $(this).find("h5").find("a").text(data.name[i])
-                $(this).find("div.product-detail").find("p").text(data.description[i]);
-                $(this).find("strong").text(data.price[i]);
+                $(this).find("img").attr("src",data.book_image[i]);
+                $(this).find("h5").find("a").text(data.book_name[i])
+                $(this).find("div.product-detail").find("p").text(data.book_detail[i]);
+                $(this).find("strong").text(data.book_price[i]);
                 }
 
                 i++;
@@ -73,11 +74,12 @@ jQuery( document ).ready(function() {
     var maxpage;
     $.ajax({
         type: 'post',
-        url: 'book_list',
+        url: '/search/',
         dataType: "JSON",
+        data: {table: 'book'},
         success: function (data) {
             booklist = data
-            var num_of_books = data.name.length;
+            var num_of_books = data.book_name.length;
              maxpage = Math.ceil(num_of_books/9)+1
             //自动生成页码
              $('ul.pagination').append('<li><Button  class="c_page" id="page_pre"><a aria-label="Previous">'+'Prev'+'</a></Button></li> ');
