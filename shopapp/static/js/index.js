@@ -40,12 +40,35 @@ jQuery( document ).ready(function() {
         data: {table: 'book'},
         success: function (data) {
             var num_of_books = 0
-            $("#tab-1").find("div.active").each(function () {
+            $("#tab-1").find("div.owl-item ").each(function () {
                 $(this).find("img").attr("src", data.book_image[num_of_books]);
-                $(this).find("h5").find("a").text(data.book_name[num_of_books])
-                $(this).find("div.product-detail").find("p").text(data.book_detail[num_of_books])
-                $(this).find("strong").text(data.book_price[num_of_books])
+                $(this).find("h5").find("a").text(data.book_name[num_of_books]);
+                $(this).find("div.product-detail").find("p").text(data.book_describe[num_of_books]);
+                $(this).find("strong").text(data.book_price[num_of_books]);
                 num_of_books++;
+            })
+                num_of_books=5;
+              $("#release-thumb").find("a").each(function () {
+                  $(this).find("img.book_image").attr("src",data.book_image[num_of_books]);
+                  $(this).find("span.book_name").text(data.book_name[num_of_books]);
+                  num_of_books++;
+              });
+                num_of_books=5;
+              $("div.upcoming-slider").find("div.item").each(function () {
+                  $(this).find("img.book_image").attr("src",data.book_image[num_of_books]);
+                  $(this).find("a.book_name").text(data.book_name[num_of_books]);
+                  $(this).find("p.book_describe").text(data.book_describe[num_of_books]);
+                  $(this).find("span.book_price").text(data.book_price[num_of_books]);
+                  num_of_books++;
+              });
+
+             var length = data.book_name.length-1;
+             $("#book_list").find("div.s-product").each(function () {
+                 $(this).find("img").attr("src",data.book_image[length]);
+                 $(this).find("p.book_describe").text(data.book_describe[length]);
+                 $(this).find("a.book_name").text(data.book_name[length]);
+                 $(this).find("span.book_author").text(data.book_author[length]);
+                 length--;
             })
 
         },
@@ -141,13 +164,50 @@ jQuery( document ).ready(function() {
 
          if(judge_user(Username,Password)==2){
             //管理员登陆成功
+             alert("管理员登陆成功")
          }
         else if(judge_user(Username,Password)==1){
             //普通用户登陆成功
+             alert("登陆成功")
          }
         else {
             //登陆失败
+             alert("登陆失败")
         }
 
     })
+
+
+// 添加 减少的函数实现，最后返回的是数量（不能小于1）
+//      $(this).on("click",".ddd", function () {
+//          console.log("pl")
+//         var $button = $(this);
+//         var $input = $button.closest('.sp-quantity').find("input.quntity-input");
+//
+//         $input.val(function(i, value) {
+//
+//             return +value + (1 * +$button.data('multi'));
+//         });
+//     });
+
+    $("a[herf='book-detail.html']").on("click", function () {
+        var bookname=$(this).text();
+        alert(bookname);
+         $.ajax({
+            type: 'post',
+            url: '/temp/',
+            dataType: "JSON",
+            data: {
+                table: 'user',
+                data: bookname
+            },
+            success: function (data) {
+                alert("123")
+            },
+            error: function () {
+                 alert("456")
+            }
+        });
+    })
+
 })

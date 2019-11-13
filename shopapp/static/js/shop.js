@@ -60,8 +60,10 @@ jQuery( document ).ready(function() {
                     $(this).show();
                 $(this).find("img").attr("src",data.book_image[i]);
                 $(this).find("h5").find("a").text(data.book_name[i])
-                $(this).find("div.product-detail").find("p").text(data.book_detail[i]);
+                $(this).find("div.product-detail").find("p").text(data.book_describe[i]);
                 $(this).find("strong").text(data.book_price[i]);
+                $(this).attr("id",data.id[i]);
+               // $(this).find("h5").find("a").attr("href",("../book-detail.html?"+data.id[i]));
                 }
 
                 i++;
@@ -116,6 +118,25 @@ jQuery( document ).ready(function() {
         display_bolist(booklist,(nowpage-1)*9)
      });
 
+    function send_temp(data_temp){
+        $.ajax({
+        type: 'post',
+        url: '/temp_save/',
+         data: data_temp,
+        dataType: "JSON",
+        success: function (data) {
+        },
+        error: function () {
+         }
+        });
+    }
+   $("#book_list").find("div.product-box").on("click",function () {
+        var book_id = $(this).attr("id");
+        var json_data={curr_id: book_id};
+        send_temp(json_data);
+       //跳转到详情页面
+       window.location.href = "../book-detail.html";
 
+    })
 
 })

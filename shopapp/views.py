@@ -24,3 +24,6 @@ def about(request):
 
 def cart(request):
     return render(request,'cart.html')
+
+def book_detail(request):
+    return render(request,'book-detail.html')

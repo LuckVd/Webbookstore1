@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿{% load staticfiles %}
+<!doctype html>
 <html class="no-js" lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,35 +9,30 @@
 <title>Bookstore HTML5 Template</title>
 
 <!-- StyleSheets -->
-<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/color-1.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/transition.css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/color-1.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/transition.css'%}">
 
 <!-- Online Lib -->
-<link rel="stylesheet" href="css/tether.min.css">
-<script src="js/tether.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/tether.min.css'%}">
+<script src="{% static 'js/tether.min.js'%}"></script>
 
 <!-- Switcher CSS -->
-<link href="switcher/switcher.css" rel="stylesheet" type="text/css"/> 
-<link rel="stylesheet" id="skins" href="css/default.css" type="text/css" media="all">
+<link href="{% static 'css/switcher.css'%}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" id="skins" href="{% static 'css/default.css'%}" type="text/css" media="all">
 
 <!-- FontsOnline -->
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400italic,400,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900italic,900,100italic,100' rel='stylesheet' type='text/css'>
-
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
 <!-- JavaScripts -->
-<script src="js/vendor/modernizr.js"></script>
+<script src="{% static 'js/modernizr.js'%}"></script>
 </head>
 <body>
-
-     
-
 
 
 <!-- Preloader -->
@@ -61,25 +57,15 @@
 		<!-- Top Bar -->
 		<div class="topbar">
 			<div class="container">
-				
-				<!-- Online Option -->
-				<div class="online-option">
-					<ul>
-						<li><a href="#">online store</a></li>
-						<li><a href="#">Payment</a></li>
-						<li><a href="#">shipping</a></li>
-						<li><a href="#">Return</a></li>
-					</ul>
-				</div>
-				<!-- Online Option -->
+
 
 				<!-- Social Icons -->
 				<div class="social-icons pull-right">
 					<ul>
-						<li><a class="fa fa-facebook" href="#"></a></li>	
-						<li><a class="fa fa-twitter" href="#"></a></li>	
-						<li><a class="fa fa-google-plus" href="#"></a></li>	
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>	
+						<li><a class="fa fa-qq" href="#"></a></li>
+						<li><a class="fa fa-wechat" href="#"></a></li>
+						<li><a class="fa fa-google-plus" href="#"></a></li>
+						<li><a class="fa fa-weibo" href="#"></a></li>
 					</ul>
 				</div>
 				<!-- Social Icons -->
@@ -87,8 +73,7 @@
 				<!-- Cart Option -->
 				<div class="cart-option">
 					<ul>
-						<li class="add-cart"><a href="#"><i class="fa fa-shopping-bag"></i><span>3</span></a></li>
-						<li><a href="#"><i class="fa fa-heart-o"></i>wish List 0 items</a></li>
+
 						<li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>Login / Register</a></li>
 					</ul>
 				</div>
@@ -98,14 +83,14 @@
 		</div>
 		<!-- Top Bar -->
 
-		<!-- Nav -->
+<!-- Nav -->
 		<nav class="nav-holder style-1">
 			<div class="container">
 				<div class="mega-dropdown-wrapper">
 
 					<!-- Logo -->
 					<div class="logo">
-						<a href="index.html"><img src="images/logo-1.png" alt=""></a>
+						<a ><img src="images/logo-1.png" alt=""></a>
 					</div>
 					<!-- Logo -->
 
@@ -124,122 +109,31 @@
 					<!-- Navigation -->
 					<div class="navigation">
 						<ul>
-							<li class="active dropdown-icon">
-								<a href="#"><i class="fa fa-home"></i>Home</a>
-								<ul>
-									<li><a href="index.html">home 1</a></li>
-									<li><a href="index-2.html">home 2</a></li>
-								</ul>
+                            <li>
+								<a href="../index"><i class="fa fa-home"></i>Home</a>
+                            </li>
+							<li class="active">
+
+								<a href="../shop"><i class="fa fa-shopping-bag"></i>shop</a>
+
 							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-shopping-bag"></i>shop</a>
-								<ul>
-									<li><a href="shop.html">shop</a></li>
-									<li><a href="shop-detail.html">shop Detail</a></li>
-								</ul>
+
+
+                            <li >
+								<a href="../gallery"><i class="fa fa-book"></i>Gallery</a>
 							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-pencil"></i>blog</a>
-								<ul>
-									<li><a href="blog-all-views.html">blog all views</a></li>
-									<li><a href="blog-larg.html">blog Larg</a></li>
-									<li><a href="blog-list.html">blog List</a></li>
-									<li><a href="blog-grid.html">blog Grid</a></li>
-									<li><a href="blog-detail.html">blog detail</a></li>
-								</ul>	
+
+
+							<li >
+								<a href="../author"><i class="fa fa-file-text"></i>author</a>
+
 							</li>
-							<li class="dropdown-icon mega-dropdown-holder">
-								<a href="#"><i class="fa fa-book"></i>categories</a>
-								<ul>
-									<li>
-										<div class="mega-dropdown">
-											<div class="row">
-												<div class="col-sm-2">
-													<div class="categories-list">
-														<h6>Categories</h6>
-														<a href="#">Technology</a>
-														<a href="#">Fiction</a>
-														<a href="#">Health &amp; fitness</a>
-														<a href="#">History</a>
-														<a href="#">Mystery</a>
-														<a href="#">Politics &amp; current Affairs</a>
-													</div>
-												</div>
-												<div class="col-sm-2">
-													<div class="categories-list">
-														<h6>Eduacation</h6>
-														<a href="#">The Rosie Effect</a>
-														<a href="#">Accounting Coach</a>
-														<a href="#">Al-Islam</a>
-														<a href="#">American Literature</a>
-														<a href="#">Antique Books</a>
-														<a href="#">Baby School</a>
-													</div>
-												</div>
-												<div class="col-sm-2">
-													<div class="categories-list">
-														<h6>print top 10</h6>
-														<a href="#">My Brilliant Friend</a>
-														<a href="#">Everywhere I Look</a>
-														<a href="#">The Rosie Project</a>
-														<a href="#">The Trap</a>
-														<a href="#">The High Mountains of</a>
-														<a href="#">The Rosie Effect</a>
-													</div>
-												</div>
-												<div class="col-sm-6">
-													<div class="row">
-														<div class="col-sm-4">
-															<div class="s-product">
-																<div class="s-product-img">
-																	<img src="images/products-collection/img-01.jpg" alt="">
-																</div>
-																<span>James oliver</span>
-															</div>
-														</div>
-														<div class="col-sm-4">
-															<div class="s-product">
-																<div class="s-product-img">
-																	<img src="images/products-collection/img-02.jpg" alt="">
-																</div>
-																<span>James oliver</span>
-															</div>
-														</div>
-														<div class="col-sm-4">
-															<div class="s-product">
-																<div class="s-product-img">
-																	<img src="images/products-collection/img-03.jpg" alt="">
-																</div>
-																<span>James oliver</span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
+							<li>
+                                <a href="../about"><i class="fa fa-info-circle"></i>about</a>
+                            </li>
+                            <li >
+								<a href="../cart"><i class="fa fa-shopping-cart"></i>Cart</a>
 							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-files-o"></i>Pages</a>
-								<ul>
-									<li><a href="about.html">about</a></li>
-									<li><a href="gallery.html">gallery</a></li>
-									<li><a href="event-list.html">event list</a></li>
-									<li><a href="event-detail.html">event detail</a></li>
-									<li><a href="book-list.html">book list</a></li>
-									<li><a href="book-detail.html">book detail</a></li>
-									<li><a href="404.html">404</a></li>
-								</ul>
-							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-file-text"></i>author</a>
-								<ul>
-									<li><a href="author.html">author</a></li>
-									<li><a href="author-detail.html">author detail</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html"><i class="fa fa-fax"></i>contact</a></li>
 						</ul>
 					</div>
 					<!-- Navigation -->
@@ -249,15 +143,7 @@
 		</nav>
 		<!-- Nav -->
 
-		<!-- Inner Banner -->
-	  	<div class="parallax-window inner-banner tc-padding overlay-dark" data-parallax="scroll" data-image-src="images/inner-banner/img-04.jpg">
-	  		<div class="container">
-	  			<div class="inner-page-heading h-white">
-	  				<h2>Book Listing</h2>
-	  			</div>
-	  		</div>
-	  	</div>
-	  	<!-- Inner Banner -->
+
 
 	</header>
 	<!-- Header -->
@@ -267,8 +153,8 @@
   		<div class="container">
   			<div class="breadcrumbs">
   				<ul>
-  					<li><a href="#">Home</a></li>
-  					<li>Shop Detail</li>
+  					<li><a ></a></li>
+  					<li>书籍详情</li>
   				</ul>
   			</div>
   		</div>
@@ -282,12 +168,7 @@
 		<div class="book-detail">
 			<div class="container">
 				
-				<!-- Alert -->
-				<div class="add-cart-alert">
-					<p><i class="fa fa-check-circle"></i>The Complete Book of Vegetables </p>
-					<a class="btn-1 sm pull-right shadow-0" href="#">view cart</a>
-				</div>
-				<!-- Alert -->
+				
 
 				<!-- Single Book Detail -->
 				<div class="single-boook-detail">
@@ -298,57 +179,38 @@
 							<div class="product-thumnbnail">
 								<ul class="product-slider">
 								  	<li>
-								  		<img src="images/product-thumbnail/img-01.jpg" alt="">
-								  		<a class="expand" href="#"><i class="fa fa-expand"></i></a>
+								  		<img id="book_image" src="" alt="" height="197" width="132">
+								  	
 								  	</li>
-								  	<li>
-								  		<img src="images/product-thumbnail/img-01.jpg" alt="">
-								  		<a class="expand" href="#"><i class="fa fa-expand"></i></a>
-								  	</li>
-								  	<li>
-								  		<img src="images/product-thumbnail/img-01.jpg" alt="">
-								  		<a class="expand" href="#"><i class="fa fa-expand"></i></a>
-								  	</li>
+								  
 								</ul>
-								<div id="product-thumbs">
-								  	<a data-slide-index="0" href=""><img src="images/product-thumbnail/thumbs/img-01.jpg" alt="" /></a>
-								  	<a data-slide-index="1" href=""><img src="images/product-thumbnail/thumbs/img-02.jpg" alt="" /></a>
-								  	<a data-slide-index="2" href=""><img src="images/product-thumbnail/thumbs/img-03.jpg" alt="" /></a>
-								</div>
+								
 							</div>
 						</div>
 						<!-- Book Thumnbnail -->
 
 						<!-- book Detail -->
 						<div class="col-lg-8 col-md-7">
-							<div class="single-product-detail">
-								<span class="availability">Availability :<strong>Stock<i class="fa fa-check-circle"></i></strong></span>
-								<h3>The Complete Book of Vegetables </h3>
-								<ul class="rating-stars">
-    								<li><i class="fa fa-star"></i></li>
-    								<li><i class="fa fa-star"></i></li>
-    								<li><i class="fa fa-star"></i></li>
-    								<li><i class="fa fa-star"></i></li>
-    								<li><i class="fa fa-star-half-o"></i></li>
-    								<li>1 customer review</li>
-    							</ul>
-    							<h4>Overview</h4>
-    							<p>With this highly anticipated new novel, the author of the bestselling Life of Pi returns to the storytelling power and luminous wisdom of his master novel. The High Mountains of Portugal is a suspenseful. dinary journey through the last century. We begin in the early 1900s, when Tomás discovers an ancient journal and sets out from Lisbon. in one of the very first motor cars</p>
-    							<p>Thirty-five years later, a pathologist devoted to the novels of Agatha Christie, whose wife has possibly been murdered, finds himself drawn into Tomás’s quest. Fifty years later, Senator Peter. Tovy of Ottawa, grieving the death of his own beloved wife, rescues a chimpanzee from an Oklahoma research facility and takes.</p>
+							<div class="single-product-detail" id ="book_detail">
+								<span class="availability">库存:<strong id="book_stock">库存<i class="fa fa-check-circle"></i></strong></span>
+								<h3 id="book_name">书籍名称</h3>
+								
+    						
+    					
     							<div class="quantity-box">
-    								<label>Qty :</label>
-    								<form id='myform' method='POST' action='123'>
-									    <input type='button' value='-' class='qtyminus'/>
-									    <input type='text' name='quantity' value='0' class='qty' />
-									    <input type='button' value='+' class='qtyplus'/>
-									</form>
+    								<label>数量 :</label>
+    									<div class="sp-quantity">
+									        <div class="sp-minus fff"><a class="ddd" data-multi="-1">-</a></div>
+                                            <div class="sp-input">
+									            <input type="text" class="quntity-input" value="1" />
+									        </div>
+									       <div class="sp-plus fff"><a class="ddd" data-multi="1">+</a></div>
+									    </div>
     							</div>
-    							<ul class="btn-list">
-    								<li><a class="btn-1 sm shadow-0 " href="#">add to cart</a></li>
-    								<li><a class="btn-1 sm shadow-0 blank" href="#"><i class="fa fa-heart"></i></a></li>
-    								<li><a class="btn-1 sm shadow-0 blank" href="#"><i class="fa fa-repeat"></i></a></li>
-    								<li><a class="btn-1 sm shadow-0 blank" href="#"><i class="fa fa-share-alt"></i></a></li>
-    							</ul>
+    						<ul class="btn-list">
+								<li><a class="btn-1 sm shadow-0 " href="#">加入购物车</a></li>
+								<li><a class="btn-1 sm shadow-0 " href="#">查看购物车</a></li>
+							</ul>
 							</div>
 						</div>
 						<!-- book Detail -->
@@ -381,15 +243,7 @@
 									<div id="tab-2">
 										<div class="book-info-list">
 											<ul>
-												<li><span>ISBN: </span>123458978</li>
-												<li><span>ISBN-10: </span>123458978</li>
-												<li><span>Audience: </span>General</li>
-												<li><span>Format: </span>ePUB</li>
-												<li><span>Language: </span>English</li>
-												<li><span>Number Of Pages: </span>336</li>
-												<li><span>Published: </span>7th March 2016</li>
-												<li><span>Country of Publication: </span>United Kingdom</li>
-												<li><span>Edition Number: </span>1</li>
+												<li><span>Author: </span><span id ="book_author">123458978</span></li>
 											</ul>
 										</div>
 									</div>
@@ -399,9 +253,9 @@
 									<div id="tab-1">	
 
 										<!-- Description -->
-										<div class="description">
-											<p>Kevin Rudd was given no warning, but even he lasted longer than Abbott. Julia Gillard had plenty of warnings, but even she lasted longer than Abbott. Abbott ignored all the warnings, from beginning to end — the public ones, the private ones, from his friends, his colleagues, the media. His colleagues were not being disloyal. They did not feel they had betrayed him; they believed he had betrayed them. Their motives were honourable. They didn’t want him to fail; they wanted the government to succeed, and they wanted the Coalition re-elected.</p>
-											<p>Abbott and Credlin had played it harder and rougher than anybody else to get where they wanted to be. But they proved incapable of managing their own office, much less the government. Then, when it was over, when it was crystal.</p>
+										<div class="description" >
+											<p id ="book_describe">Kevin Rudd was given no warning, but even he lasted longer than Abbott. Julia Gillard had plenty of warnings, but even she lasted longer than Abbott. Abbott ignored all the warnings, from beginning to end — the public ones, the private ones, from his friends, his colleagues, the media. His colleagues were not being disloyal. They did not feel they had betrayed him; they believed he had betrayed them. Their motives were honourable. They didn’t want him to fail; they wanted the government to succeed, and they wanted the Coalition re-elected.</p>
+										
 										</div>
 										<!-- Description -->
 
@@ -798,34 +652,37 @@
 <!-- Quick View -->
 
 <!-- Java Script -->
-<script src="js/vendor/jquery.js"></script>        
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
-<script src="js/gmap3.min.js"></script>			
-<script src="js/datepicker.js"></script>					
-<script src="js/contact-form.js"></script>					
-<script src="js/bigslide.js"></script>					
-<script src="js/3d-book-showcase.js"></script>					
-<script src="js/turn.js"></script>							
-<script src="js/jquery-ui.js"></script>								
-<script src="js/mcustom-scrollbar.js"></script>					
-<script src="js/timeliner.js"></script>					
-<script src="js/parallax.js"></script>			   	 
-<script src="js/countdown.js"></script>	
-<script src="js/countTo.js"></script>		
-<script src="js/owl-carousel.js"></script>	
-<script src="js/bxslider.js"></script>	
-<script src="js/appear.js"></script>		 		
-<script src="js/sticky.js"></script>			 		
-<script src="js/prettyPhoto.js"></script>			
-<script src="js/isotope.pkgd.js"></script>					 
-<script src="js/wow-min.js"></script>			
-<script src="js/classie.js"></script>					
-<script src="js/main.js"></script>	
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/gmap3.min.js' %}"></script>
+<script src="{% static 'js/datepicker.js' %}"></script>
+<script src="{% static 'js/contact-form.js' %}"></script>
+<script src="{% static 'js/bigslide.js' %}"></script>
+<script src="{% static 'js/3d-book-showcase.js' %}"></script>
+<script src="{% static 'js/turn.js' %}"></script>
+<script src="{% static 'js/mcustom-scrollbar.js' %}"></script>
+<script src="{% static 'js/timeliner.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
+<script src="{% static 'js/countdown.js' %}"></script>
+<script src="{% static 'js/countTo.js' %}"></script>
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<script src="{% static 'js/bxslider.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/sticky.js' %}"></script>
+<script src="{% static 'js/prettyPhoto.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.js' %}"></script>
+<script src="{% static 'js/wow-min.js' %}"></script>
+<script src="{% static 'js/classie.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/book_detail.js' %}"></script>
+
 
 <!-- Switcher JS -->
-<script type="text/javascript" src="switcher/cookie.js"></script>
-<script type="text/javascript" src="switcher/colorswitcher.js"></script>
-<!-- Switcher JS -->						
+<script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/colorswitcher.js' %}"></script>
+<!-- Switcher JS -->
 </body>
 </html>

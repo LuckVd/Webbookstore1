@@ -12,11 +12,13 @@ def search(request):
     user_dict['user_is_admin'] = ["0", "0", "0", "1"]
     #书籍表
     book_list_dict = {}
+    book_list_dict['id']=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    book_list_dict['book_stock'] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
     book_list_dict['book_name'] = ["book1", "book2", "book3", "book4", "book1", "book2", "book3", "book4", "book1", "book2",
                               "book3", "book4"]
     book_list_dict['book_price'] = ["100.00", "200.00", "300.00", "400.00", "500.00", "600.00", "700.00", "800.00", "900.00",
                                "1000.00", "1100.00", "1200.00"]
-    book_list_dict['book_detail'] = ["This is book1", "This is book2", "This is book3", "This is book4",
+    book_list_dict['book_describe'] = ["This is book1", "This is book2", "This is book3", "This is book4",
                                      "This is book1", "This is book2", "This is book3", "This is book4",
                                      "This is book1", "This is book2", "This is book3", "This is book4"]
     book_list_dict['book_image'] = ["images/best-seller/img-01.jpg", "images/best-seller/img-02.jpg",
@@ -25,6 +27,9 @@ def search(request):
                                  "images/best-seller/img-03.jpg", "images/best-seller/img-04.jpg",
                                  "images/best-seller/img-01.jpg", "images/best-seller/img-02.jpg",
                                  "images/best-seller/img-03.jpg", "images/best-seller/img-04.jpg",]
+    book_list_dict['book_author'] = ["author1", "author2", "author3", "author4", "author5",
+                                  "author6", "author7", "author8", "author9",
+                                     "author10", "author11", "author12"]
     #作者表
     author_dict = {}
     author_dict['author_name'] = ["author1", "author2", "author3", "author4", "author5",
