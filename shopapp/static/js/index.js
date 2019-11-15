@@ -94,7 +94,7 @@ jQuery( document ).ready(function() {
     function register(senddata) {
         $.ajax({
             type: 'post',
-            url: '/add/',
+            url: 'http://localhost:8000/add/',
             dataType: "JSON",
             data: {
                 table: 'user',
