@@ -132,7 +132,7 @@ jQuery( document ).ready(function() {
     }
    $("#book_list").find("div.product-box").on("click",function () {
         var book_id = $(this).attr("id");
-        var json_data={curr_id: book_id};
+        var json_data={"data_method":"book_id","curr_id": book_id};
         send_temp(json_data);
        //跳转到详情页面
        window.location.href = "../book-detail.html";

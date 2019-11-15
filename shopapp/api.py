@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app01 import models
+from shopapp import models
 from django.http import HttpResponse
 import json
 from django.core import serializers

@@ -91,6 +91,20 @@ jQuery( document ).ready(function() {
         });
 
 
+      function display_bolist(){
+        $.ajax({
+        type: 'post',
+        url: '/temp_get/',
+         data: {"data_method":"user_id"},
+        success: function (data) {
+            alert(data)
+        },
+        error: function () {
+         }
+        });
+    }
+
+
     function register(senddata) {
         $.ajax({
             type: 'post',
@@ -138,6 +152,20 @@ jQuery( document ).ready(function() {
 
     })
 
+    //通过临时信息保存登录用户
+      function send_temp(data_temp){
+        $.ajax({
+        type: 'post',
+        url: '/temp_save/',
+         data: data_temp,
+        dataType: "JSON",
+        success: function (data) {
+        },
+        error: function () {
+         }
+        });
+    }
+
     //登陆事件触发
 
 
@@ -150,11 +178,11 @@ jQuery( document ).ready(function() {
             if(username==user_table['user_name'][i]&&password==user_table['user_password'][i])
             {
                 if(user_table['user_is_admin'][i]=="1")
-                    return 2;
-                return 1;
+                    return -1;
+                return i;
             }
         }
-        return 0;
+        return -2;
     }
 
 
@@ -162,18 +190,23 @@ jQuery( document ).ready(function() {
         var Username = $(this).closest(".sending-form").find("input[placeholder='UserName']").val();
         var Password = $(this).closest(".sending-form").find("input[placeholder='Password']").val();
 
-         if(judge_user(Username,Password)==2){
+        var logindata=judge_user(Username,Password)
+         if(logindata==-1){
             //管理员登陆成功
              alert("管理员登陆成功")
          }
-        else if(judge_user(Username,Password)==1){
-            //普通用户登陆成功
-             alert("登陆成功")
-         }
-        else {
+
+        else if(logindata ==-2) {
             //登陆失败
              alert("登陆失败")
         }
+         else {
+            //普通用户登陆成功
+             var json_data={"data_method":"user_id","user_id": logindata};
+             send_temp(json_data);
+             alert("登陆成功")
+             $("#login-modal").modal('hide');
+         }
 
     })
 

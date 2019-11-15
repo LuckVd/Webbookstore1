@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
         'NAME': 'bookstore',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'fjw',
         'HOST':'localhost',
         'PORT':'3306',
     }
