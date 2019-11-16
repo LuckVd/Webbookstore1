@@ -32,7 +32,6 @@ jQuery( document ).ready(function() {
     });
     //这上面的代码都是为了解决跨域问题，如果不用的话会引起跨域访问错误
 
-    var user_table;//用来保存获取的用户表
     $.ajax({
         type: 'post',
         url: '/search/',
@@ -77,105 +76,6 @@ jQuery( document ).ready(function() {
         }
     });
 
-     $.ajax({
-            type: 'post',
-            url: '/search/',
-            dataType: "JSON",
-            data: {table: 'user'},
-            success: function (data) {
-               user_table= data;
-            },
-            error: function () {
-                console.log("无法获取用户表")
-            }
-        });
-
-
-    function register(senddata) {
-        $.ajax({
-            type: 'post',
-            url: 'http://localhost:8000/add/',
-            dataType: "JSON",
-            data: {
-                table: 'user',
-                data: senddata
-            },
-            success: function (data) {
-                if (data == '1') {
-                    alert("注册成功");
-                    $("#register-modal").modal('hide');
-                } else {
-                    alert("注册失败，写入数据库失败")
-                }
-            },
-            error: function () {
-                alert("注册失败，请检查网络")
-            }
-        });
-    }
-
-    //注册事件触发
-    $("#btn_register").click(function () {
-        var Username = $(this).closest(".sending-form").find("input[placeholder='UserName']").val();
-        var Email = $(this).closest(".sending-form").find("input[placeholder='Email']").val();
-        var Password = $(this).closest(".sending-form").find("input[placeholder='Password']").val();
-        var Password_again = $(this).closest(".sending-form").find("input[placeholder='PasswordAgain']").val();
-
-        console.log(Username);
-        //确认输入无误时，将信息传递给后台
-        if (Password == Password_again) {
-            data = new Object();
-            data.user_name = Username;
-            data.user_password = Password;
-            data.user_email = Email;
-            data.user_is_admin = '0'
-            data = JSON.stringify(data)
-            console.log(data);
-            register(data);
-        } else {
-            alert("密码输入不一致");
-        }
-
-    })
-
-    //登陆事件触发
-
-
-
-    function judge_user(username,password) {
-        var len=user_table.id.length;
-        for(var i=0;i<len;i++)
-        {
-
-            if(username==user_table['user_name'][i]&&password==user_table['user_password'][i])
-            {
-                if(user_table['user_is_admin'][i]=="1")
-                    return 2;
-                return 1;
-            }
-        }
-        return 0;
-    }
-
-
-    $("#btn_login").click(function () {
-        var Username = $(this).closest(".sending-form").find("input[placeholder='UserName']").val();
-        var Password = $(this).closest(".sending-form").find("input[placeholder='Password']").val();
-
-         if(judge_user(Username,Password)==2){
-            //管理员登陆成功
-             alert("管理员登陆成功")
-         }
-        else if(judge_user(Username,Password)==1){
-            //普通用户登陆成功
-             alert("登陆成功")
-         }
-        else {
-            //登陆失败
-             alert("登陆失败")
-        }
-
-    })
 
 
 // 添加 减少的函数实现，最后返回的是数量（不能小于1）
@@ -189,25 +89,25 @@ jQuery( document ).ready(function() {
 //             return +value + (1 * +$button.data('multi'));
 //         });
 //     });
-
-    $("a[herf='book-detail.html']").on("click", function () {
-        var bookname=$(this).text();
-        alert(bookname);
-         $.ajax({
-            type: 'post',
-            url: '/temp/',
-            dataType: "JSON",
-            data: {
-                table: 'user',
-                data: bookname
-            },
-            success: function (data) {
-                alert("123")
-            },
-            error: function () {
-                 alert("456")
-            }
-        });
-    })
+//
+//     $("a[herf='book-detail.html']").on("click", function () {
+//         var bookname=$(this).text();
+//         alert(bookname);
+//          $.ajax({
+//             type: 'post',
+//             url: '/temp/',
+//             dataType: "JSON",
+//             data: {
+//                 table: 'user',
+//                 data: bookname
+//             },
+//             success: function (data) {
+//                 alert("123")
+//             },
+//             error: function () {
+//                  alert("456")
+//             }
+//         });
+//     })
 
 })

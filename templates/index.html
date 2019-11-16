@@ -61,7 +61,7 @@
 				<div class="cart-option">
 					<ul>
 
-						<li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>Login / Register</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i></a></li>
 					</ul>
 				</div>
 				<!-- Cart Option -->
@@ -1285,23 +1285,22 @@
 			<strong>Register</strong>
 			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-			<div class="sending-form" action="/register/" method="post">
-                {% csrf_token %}
+			<div class="sending-form" >
 				<div class="form-group">
-					<input class="form-control" required="required" name="username" placeholder="Username" >
+					<input class="form-control" required="required" placeholder="Username" >
 					<i class="fa fa-user"></i>
 				</div>
 				<div class="form-group">
-					<input class="form-control" required="required" name="username" placeholder="Email" >
+					<input class="form-control" required="required"  placeholder="Email" >
 					<i class="fa fa-user"></i>
 				</div>
 				<div class="form-group">
 					<input class="form-control" type=
-                            "password" required="required" name="password" placeholder="Password">
+                            "password" required="required"  placeholder="Password">
 					<i class="fa fa-user"></i>
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="password"  required="required" name="repassword" placeholder="PasswordAgain">
+					<input class="form-control" type="password"  required="required"  placeholder="PasswordAgain">
 					<i class="fa fa-user"></i>
 				</div>
 				<p class="terms">注册前请阅读 <a href="#">用户须知</a></p>
@@ -1312,29 +1311,23 @@
 </div>
 <!-- Register Modal -->
 
-
-<!-- buy Modal -->
-<div class="modal fade login-modal" id="buy-modal" role="dialog">
+<!-- Quit Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
+<div class="modal fade login-modal" id="quit-modal" role="dialog">
 	<div class="position-center-center" role="document">
 		<div class="modal-content">
-			<strong>Register</strong>
+			<strong>用户信息</strong>
 			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<div class="row">
-			<div class="col-sm-5">
-				<div class="product-thumnbnail">
-					<img  id="buy_image" src="images/qiuck-view/img-01.jpg" alt="">
-				</div>
-			</div>
-			<div class="sending-form"  >
 			
-				<p class="terms" id="buy_name">注册前请阅读 <a href="#">用户须知</a></p>
-		
-			</div>
+				<p class="terms">用户名:&#12288;<span id="user_name">user</span></p>
+				<p class="terms">邮&#12288;箱:&#12288;<span id="user_email">user@Qq.com</span></p>
+				<p class="terms">权&#12288;限&#12288;<span id="is_admin">普通用户</span></p>
+				<button id="quit_login" class="btn-1 shadow-0 full-width">退出登陆</button>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- buy Modal -->
+<!-- Quit Modal -->
 
 
 
@@ -1416,6 +1409,7 @@
 <script src="{% static 'js/classie.js' %}"></script>
 <script src="{% static 'js/index.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/LoginRegister.js' %}"></script>
 
 <!-- Switcher JS -->
 <script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>

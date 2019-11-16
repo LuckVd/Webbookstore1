@@ -35,13 +35,11 @@ jQuery( document ).ready(function() {
 
     var booklist;
     var curr_id;
-
     function display_bolist(){
         $.ajax({
         type: 'post',
         url: '/temp_get/',
-         data: "",
-        dataType: "text",
+         data: {"data_method":"book_id"},
         success: function (data) {
             curr_id=data.replace(/[^0-9]/ig,"")
            $("#book_detail").find("#book_stock").text(booklist.book_stock[curr_id]);

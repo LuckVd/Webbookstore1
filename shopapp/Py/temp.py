@@ -1,10 +1,20 @@
 from django.http import HttpResponse, JsonResponse
 
+book_id = user_id = -1;
 def temp_save(request):
-    global curr_id
-    curr_id =request.POST.get("curr_id")
+    global book_id , user_id
+    data_method=request.POST.get("data_method")
+    if data_method=="book_id":
+        book_id = request.POST.get("curr_id")
+    elif data_method=="user_id":
+        user_id = request.POST.get("user_id")
+        print(user_id)
     return JsonResponse("1",safe=False)
 
 def temp_get(request):
-    print(curr_id)
-    return JsonResponse(curr_id,safe=False)
+    data_method = request.POST.get("data_method")
+    if data_method=="book_id":
+        return JsonResponse(book_id,safe=False)
+    elif data_method=="user_id":
+        print(user_id)
+        return JsonResponse(user_id,safe=False)

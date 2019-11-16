@@ -7,13 +7,14 @@ from Webbookstore import settings
 from . import views
 from . import api
 from shopapp.Py import   cart,add, search, temp
+from shopapp import api
 app_name = 'blog'
 urlpatterns = [
 
 
     path('cart/cart_show', cart.cart_show),
     #path('add/', add.add),
-    #path('search/', search.search),
+    path('search/', search.search),
     path('temp_save/', temp.temp_save),
     path('temp_get/', temp.temp_get),
     url(r'^index/$', views.index),
@@ -27,7 +28,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'images/(?P<path>.*)$', serve, {'document_root': 'shopapp/static/images'}),
 
-    path('add/',api.add),#path（route,view）
+    path('add/',api.add),
     path('delete/',api.delete),
     path('update/',api.update),
     path('search/',api.search),
