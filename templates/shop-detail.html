@@ -786,8 +786,8 @@
   	</div>
 </div>
 <!-- View Pages -->
-
 <!-- Login Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
 <div class="modal fade login-modal" id="login-modal" role="dialog">
 	<div class="position-center-center" role="document">
 		<div class="modal-content">
@@ -795,18 +795,13 @@
 			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<div class="social-options">
 				<ul>
-					<li><a class="facebook" href="#"><i class="fa fa-facebook"></i>Register with facebook</a></li>
-					<li><a class="twitter" href="#"><i class="fa fa-twitter"></i>Register with twitter</a></li>
-					<li><a class="google" href="#"><i class="fa fa-google-plus"></i>Register with gmail+</a></li>
+					<li><a class="google" href="#" data-toggle="modal" data-target="#register-modal"><i class="fa fa-registered"></i>使用用户名注册</a></li>
 				</ul>
 			</div>
-			<form class="sending-form">
+			<div class="sending-form">
+
 				<div class="form-group">
-					<input class="form-control" required="required" placeholder="Full name">
-					<i class="fa fa-user"></i>
-				</div>
-				<div class="form-group">
-					<input class="form-control" required="required" placeholder="Email Address">
+					<input class="form-control" required="required" placeholder="UserName">
 					<i class="fa fa-user"></i>
 				</div>
 				<div class="form-group">
@@ -814,12 +809,67 @@
 					<i class="fa fa-user"></i>
 				</div>
 				<p class="terms">You agree to the hldy.hr <a href="#">Terms &amp; Conditions</a></p>
-				<button class="btn-1 shadow-0 full-width">Register account</button>
-			</form>
+				<button id="btn_login" class="btn-1 shadow-0 full-width">登陆</button>
+			</div>
 		</div>
 	</div>
 </div>
 <!-- Login Modal -->
+
+
+
+
+<!-- Register Modal -->
+<div class="modal fade login-modal" id="register-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>Register</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+			<div class="sending-form" >
+				<div class="form-group">
+					<input class="form-control" required="required" placeholder="Username" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" required="required"  placeholder="Email" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type=
+                            "password" required="required"  placeholder="Password">
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password"  required="required"  placeholder="PasswordAgain">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="terms">注册前请阅读 <a href="#">用户须知</a></p>
+				<button id="btn_register"   class="btn-1 shadow-0 full-width" >Register account</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Register Modal -->
+
+<!-- Quit Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
+<div class="modal fade login-modal" id="quit-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>用户信息</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			
+				<p class="terms">用户名:&#12288;<span id="user_name">user</span></p>
+				<p class="terms">邮&#12288;箱:&#12288;<span id="user_email">user@Qq.com</span></p>
+				<p class="terms">权&#12288;限&#12288;<span id="is_admin">普通用户</span></p>
+				<button id="quit_login" class="btn-1 shadow-0 full-width">退出登陆</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Quit Modal -->
+
 
 <!-- Quick View -->
 <div class="modal fade quick-view" id="quick-view" role="dialog">

@@ -1,8 +1,10 @@
 jQuery( document ).ready(function() {
     var user_table;//用来保存获取的用户表
-    $.ajax({
+    function getuserdata() {
+        $.ajax({
         type: 'post',
         url: '/search/',
+        async: false,
         dataType: "JSON",
         data: {table: 'user'},
         success: function (data) {
@@ -13,15 +15,38 @@ jQuery( document ).ready(function() {
         }
     });
 
+    }
+
 
     //查看后台是否当前已经登陆
-    function login_display() {
-        $.ajax({
-            type: 'post',
-            url: '/temp_get/',
-            data: {"data_method": "user_id"},
-            success: function (data) {
-                if (data != "-1") {
+    // function login_display() {
+    //     $.ajax({
+    //         type: 'post',
+    //         url: '/temp_get/',
+    //         data: {"data_method": "user_id"},
+    //         success: function (data) {
+    //             if (data != "-1") {
+    //                 $("a[data-target='#login-modal']").text(user_table.user_name[data])
+    //                 $("a[data-target='#login-modal']").attr("data-target", "#quit-modal");
+    //                 $("#quit-modal").find("#user_name").text(user_table.user_name[data]);
+    //                 $("#quit-modal").find("#user_email").text(user_table.user_email[data]);
+    //                 if (user_table.user_is_admin[data] == "1") {
+    //                     $("#quit-modal").find("#is_admin").text("管理员");
+    //                 }
+    //             }
+    //             $("a[data-target='#login-modal']").text("Login / Register")
+    //
+    //         },
+    //         error: function () {
+    //         }
+    //     });
+    // }
+
+    function login_display()
+    {
+       data=sessionStorage.getItem( "user_id" );
+       getuserdata();
+         if (data != null) {
                     $("a[data-target='#login-modal']").text(user_table.user_name[data])
                     $("a[data-target='#login-modal']").attr("data-target", "#quit-modal");
                     $("#quit-modal").find("#user_name").text(user_table.user_name[data]);
@@ -30,14 +55,8 @@ jQuery( document ).ready(function() {
                         $("#quit-modal").find("#is_admin").text("管理员");
                     }
                 }
-                $("a[data-target='#login-modal']").text("Login / Register")
-
-            },
-            error: function () {
-            }
-        });
+         $("a[data-target='#login-modal']").text("Login / Register")
     }
-
     login_display()
 
     //注册事件
@@ -138,7 +157,8 @@ jQuery( document ).ready(function() {
         } else {
             //普通用户登陆成功
             var json_data = {"data_method": "user_id", "user_id": logindata};
-            send_temp(json_data);
+            sessionStorage.setItem( "user_id", logindata );
+          //  send_temp(json_data);
             alert("登陆成功")
             $("#login-modal").modal('hide');
             login_display();
@@ -148,8 +168,9 @@ jQuery( document ).ready(function() {
     //退出事件触发
 
     $("#quit_login").click(function () {
-        var json_data = {"data_method": "user_id", "user_id": -2};
-        send_temp(json_data);
+        sessionStorage.removeItem("user_id");
+        //var json_data = {"data_method": "user_id", "user_id": -2};
+       //  send_temp(json_data);
         $("a[data-target='#quit-modal']").attr("data-target", "#login-modal");
         $("a[data-target='#login-modal']").text("Login / Register")
         $("#quit-modal").modal('hide');

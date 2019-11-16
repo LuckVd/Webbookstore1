@@ -32,7 +32,7 @@ jQuery( document ).ready(function() {
         }
     });
     //这上面的代码都是为了解决跨域问题，如果不用的话会引起跨域访问错误
-
+    var value_r = 0;//书籍数量
     var booklist;
     var curr_id;
     function display_bolist(){
@@ -75,9 +75,30 @@ jQuery( document ).ready(function() {
         var $input = $button.closest('.sp-quantity').find("input.quntity-input");
 
         $input.val(function (i, value) {
-            var value_r = +value + (1 * +$button.data('multi'))
-            return Math.max(value_r, 1);
+            value_r  = +value + (1 * +$button.data('multi'))
+            return Math.max(value_r, 0);
         });
     });
+
+     $("#add_cart").on("click", function () {
+            sendbookdata(curr_id,value_r);
+     })
+
+    function sendbookdata(id,num) {
+         $.ajax({
+        type: 'post',
+        url: '/temp_save/',
+        dataType: "JSON",
+        data: {
+            "data_method": "book_cart",
+            "book_cart_id": id,
+            "book_cart_num":num},
+        success: function (data) {
+        },
+        error: function () {
+            console.log("book_detail_failed")
+        }
+    });
+    }
 
 })
