@@ -34,8 +34,13 @@ jQuery( document ).ready(function() {
     //这上面的代码都是为了解决跨域问题，如果不用的话会引起跨域访问错误
 
     var book_info;
+    var all_book_info;
     var nowpage=1;
     var maxpage;
+    var cart_list;
+
+      make_cart();//在最开始时构建购物车表
+
      function create_pagenumber(maxpage){
          //自动生成页码
             $('ul.pagination').empty();
@@ -56,11 +61,11 @@ jQuery( document ).ready(function() {
         $("div.business").each(function(){
             if(i<num_val){
                 $(this).show();
-                 $(this).find("img").attr("src",book_info.pic_src[i]);
-                 $(this).find("h5").text(book_info.name[i])
-                 $(this).find("div.detail").find("span").text(book_info.description[i])
-                 $(this).find("strong").text(book_info.price[i])
-                 $(this).find("input").val(book_info.num[i])
+                 $(this).find("img").attr("src",book_info.book_image[i]);
+                 $(this).find("h5").text(book_info.book_name[i])
+                 $(this).find("div.detail").find("span").text(book_info.book_describe[i])
+                 $(this).find("strong").text(book_info.book_price[i])
+                 $(this).find("input").val(book_info.book_num[i])
             }
             else{  $(this).hide()}
                  i++;
@@ -88,8 +93,27 @@ jQuery( document ).ready(function() {
             new_book_info[list_keys[i_key]].splice(-1,1);
         }
         book_info=new_book_info;
+        delte_cart_data(i);
         display((nowpage-1)*5,book_info);
     }
+        //通知临时存储删除对应物品
+       function delte_cart_data(id){
+        $.ajax({
+        type: 'post',
+        url: '/temp_save/',
+        dataType: "JSON",
+         data: {"data_method":"book_cart_delete",
+                "delete_id":id},
+         async: false,
+       success: function (data) {
+        },
+        error: function () {
+            console.log("fail")
+        }
+    });
+
+    }
+
 
     //关闭，删除该项物品
     $("button:has(i)").click(function() {
@@ -129,19 +153,71 @@ jQuery( document ).ready(function() {
         display((nowpage-1)*5,book_info);
      });
 
-    $.ajax({
+  //获取所有的书籍内容
+    function get_book_data(){
+        $.ajax({
         type: 'post',
-        url: 'cart_show',
+        url: '/search/',
         dataType: "JSON",
-        data:{"table":"book"},
-        success: function (data) {
-            book_info=data;
-            display(0,book_info);
+        data: {table: 'book'},
+         async: false,
+       success: function (data) {
+            all_book_info=data;
+
         },
         error: function () {
-            console.log("faileds")
+            console.log("fail")
         }
     });
 
+    }
+    //从临时文件值获取用户添加到购物车的内容
+    function get_cart_data(){
+        $.ajax({
+        type: 'post',
+        url: '/temp_get/',
+        dataType: "JSON",
+        data: {"data_method":"book_cart"},
+         async: false,
+        success: function (data) {
+            cart_list=$.makeArray(data);
+        },
+        error: function () {
+            console.log("fail")
+        }
+    });
+    }
+
+    function make_cart()
+    {
+        get_book_data();
+        get_cart_data();
+        console.log(cart_list);
+        console.log(all_book_info);
+
+        var book_info_tem = new Object();
+        var arry_image=new Array();
+        var arry_describe=new Array();
+        var arry_name=new Array();
+        var arry_price=new Array();
+        var arry_num=new Array();
+
+        for(var i=0;i<cart_list.length/2;i++)
+        {
+            arry_image[i]=all_book_info.book_image[cart_list[i*2]];
+            arry_describe[i]=all_book_info.book_describe[cart_list[i*2]];
+            arry_name[i]=all_book_info.book_name[cart_list[i*2]];
+            arry_price[i]=all_book_info.book_price[cart_list[i*2]];
+            arry_num[i]=cart_list[i*2+1];
+        }
+        book_info_tem.book_image = arry_image;
+        book_info_tem.book_describe= arry_describe;
+        book_info_tem.book_name = arry_name;
+        book_info_tem.book_price = arry_price;
+        book_info_tem.book_num=arry_num;
+        book_info=book_info_tem;
+        console.log(book_info);
+        display(0,book_info);
+    }
 });
 

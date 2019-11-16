@@ -84,6 +84,7 @@ jQuery( document ).ready(function() {
             sendbookdata(curr_id,value_r);
      })
 
+
     function sendbookdata(id,num) {
          $.ajax({
         type: 'post',
@@ -100,5 +101,8 @@ jQuery( document ).ready(function() {
         }
     });
     }
+   $("#go_cart").on("click", function () {
+            window.location.href = "../cart";
+     })
 
 })
