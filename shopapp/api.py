@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app01 import models
+from shopapp import models
 from django.http import HttpResponse
 import json
 from django.core import serializers
@@ -79,12 +79,27 @@ def search(request):
         res = ''
 
         if tablename == "user":
-            res = serializers.serialize("json", models.user.objects.all())
+            if(request.POST.get("type") == "id"):
+                data = request.POST.get("data")
+                res = serializers.serialize("json", models.user.objects.filter(id=data))
+            else:
+                res = serializers.serialize("json", models.user.objects.all())
             print(res)
         if tablename == "book":
-            res = serializers.serialize("json", models.book.objects.all())
+            if(request.POST.get("type") == "id"):
+                data = request.POST.get("data")
+                res = serializers.serialize("json", models.book.objects.filter(id=data))
+            else:
+                res = serializers.serialize("json", models.book.objects.all())
         if tablename == "author":
-            res = serializers.serialize("json", models.author.objects.all())
+            if(request.POST.get("type") == "name"):
+                data = request.POST.get("data")
+                res = serializers.serialize("json", models.author.objects.filter(author_name=data))
+            elif(request.POST.get("type") == "id"):
+                id = request.POST.get("data")
+                res = serializers.serialize("json", models.author.objects.filter(id=data))
+            else:
+                res = serializers.serialize("json", models.author.objects.all())
         if tablename == "orders":
             res = serializers.serialize("json", models.orders.objects.all())
         if tablename == "addressee":

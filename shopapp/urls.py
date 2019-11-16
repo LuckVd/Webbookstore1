@@ -5,6 +5,7 @@ from django.views.static import serve
 
 from Webbookstore import settings
 from . import views
+from . import api
 from shopapp.Py import   cart,add, search, temp
 app_name = 'blog'
 urlpatterns = [
@@ -26,7 +27,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'images/(?P<path>.*)$', serve, {'document_root': 'shopapp/static/images'}),
 
-    path('add/',views.add),#path（route,view）
+    path('add/',api.add),#path（route,view）
     path('delete/',api.delete),
     path('update/',api.update),
     path('search/',api.search),
