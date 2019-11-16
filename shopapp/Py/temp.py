@@ -1,5 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 
+book_id = user_id = -1;
 def temp_save(request):
     global book_id , user_id
     data_method=request.POST.get("data_method")
@@ -15,4 +16,5 @@ def temp_get(request):
     if data_method=="book_id":
         return JsonResponse(book_id,safe=False)
     elif data_method=="user_id":
+        print(user_id)
         return JsonResponse(user_id,safe=False)
