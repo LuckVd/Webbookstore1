@@ -36,7 +36,7 @@ jQuery( document ).ready(function() {
         var findid = $("#finduserid").val()
          $.ajax({
         type: 'POST',
-        url: 'http://localhost:8000/search/',
+        url: '/search/',
         dataType: "JSON",
              data:{
                 table:'user',
@@ -60,7 +60,7 @@ jQuery( document ).ready(function() {
                       var c=$(this).attr('id').slice(10)
          $.ajax({
         type: 'post',
-        url: 'http://localhost:8000/delete/',
+        url: '/delete/',
         dataType: "JSON",
              data:{
                 table:'user',

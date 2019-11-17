@@ -65,7 +65,7 @@ jQuery( document ).ready(function() {
              var length = data.book_name.length-1;
              $("#book_list").find("div.s-product").each(function () {
                  $(this).find("img").attr("src",data.book_image[length]);
-                 $(this).find("p.book_describe").text(data.book_describe[length].substring(0,maxlen)+ "...");
+                 $(this).find("p.book_describe").text(data.book_describe[length]);
                  $(this).find("a.book_name").text(data.book_name[length].substring(0,maxlen)+ "...");
                  $(this).find("span.book_author").text(data.book_author[length].substring(0,maxlen));
                  length--;

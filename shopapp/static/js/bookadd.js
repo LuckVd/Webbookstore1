@@ -35,7 +35,7 @@ jQuery( document ).ready(function() {
     function bookadd(senddata){
        $.ajax({
         type: 'post',
-           url:'http://localhost:8000/add/',
+           url:'/add/',
         dataType: "JSON",
         data:{
             table:'book',

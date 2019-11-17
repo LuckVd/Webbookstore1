@@ -37,7 +37,7 @@ jQuery( document ).ready(function() {
         console.log(name)
         $.ajax({
         type: 'Post',
-        url: 'http://localhost:8000/search/',
+        url: '/search/',
         dataType: "JSON",
              data:{
                 table:'author',
@@ -62,7 +62,7 @@ jQuery( document ).ready(function() {
                       var c=$(this).attr('id').slice(12)
         $.ajax({
         type: 'post',
-        url: 'http://localhost:8000/delete/',
+        url: '/delete/',
         dataType: "JSON",
             data:{
                 table:'author',

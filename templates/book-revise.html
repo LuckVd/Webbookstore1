@@ -90,41 +90,35 @@
 			<div class="container">
 				<div class="mega-dropdown-wrapper">
 
-					<!-- Logo -->
-					<div class="logo">
-						<a href="index.html"><img src="images/logo-1.png " alt=""></a>
-					</div>
-					<!-- Logo -->
-
-					<!-- Search bar -->
-					<div class="search-bar">
-						<a href="#"><i class="fa fa-search"></i></a>
-					</div>
-					<!-- Search bar -->
-
-					<!-- Responsive Button -->
-					<div class="responsive-btn">
-						<a href="#menu" class="menu-link circle-btn"><i class="fa fa-bars"></i></a>
-					</div>
-					<!-- Responsive Button -->
+					
 
 					<!-- Navigation -->
 					<div class="navigation">
 						<ul>
+							<li >
+								<a href="../index"><i class="fa fa-home"></i>主页</a>
+							</li>
+							<li >
+								<a href="../shop"><i class="fa fa-shopping-bag"></i>商城</a>
+
+							</li>
+
+							<li >
+								<a href="../author"><i class="fa fa-file-text"></i>作者</a>
+
+							</li>
+							<li>
+                                <a href="../about"><i class="fa fa-info-circle"></i>关于</a>
+                            </li>
+                            <li >
+								<a href="../cart"><i class="fa fa-shopping-cart"></i>购物车</a>
+							</li>
 							<li class="active dropdown-icon">
-								<a href="../admin.html"><i class="fa fa-book"></i>书籍管理</a>
+								<a href="../book_admin"><i class="fa fa-book"></i>书籍管理</a>
                                 <ul>
-									<li><a href="../admin.html">书籍添加</a></li>
+									<li><a href="book_admin">书籍添加</a></li>
 									<li><a href="../book-fd.html">书籍查询与删除</a></li>
                                     <li><a href="../book-revise.html">书籍修改</a></li>
-								</ul>
-							</li>
-							<li class="dropdown-icon">
-								<a href="../author-add.html"><i class="fa fa-home"></i>作者管理</a>
-                                <ul>
-									<li><a href="../author-add.html">作者添加</a></li>
-									<li><a href="../author-fd.html">作者查询与删除</a></li>
-                                    <li><a href="../author-revise.html">作者修改</a></li>
 								</ul>
 							</li>
 							<li class="dropdown-icon">
@@ -350,6 +344,89 @@
 </nav>
 <!-- Slide Menu -->
 
+<!-- Login Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
+<div class="modal fade login-modal" id="login-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>Register</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<div class="social-options">
+				<ul>
+					<li><a class="google" href="#" data-toggle="modal" data-target="#register-modal"><i class="fa fa-registered"></i>使用用户名注册</a></li>
+				</ul>
+			</div>
+			<div class="sending-form">
+
+				<div class="form-group">
+					<input class="form-control" required="required" placeholder="UserName">
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password" required="required" placeholder="Password">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="terms">You agree to the hldy.hr <a href="#">Terms &amp; Conditions</a></p>
+				<button id="btn_login" class="btn-1 shadow-0 full-width">登陆</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Login Modal -->
+
+
+<!-- Register Modal -->
+<div class="modal fade login-modal" id="register-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>Register</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+			<div class="sending-form" >
+				<div class="form-group">
+					<input class="form-control" required="required" placeholder="Username" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" required="required"  placeholder="Email" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type=
+                            "password" required="required"  placeholder="Password">
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password"  required="required"  placeholder="PasswordAgain">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="terms">注册前请阅读 <a href="#">用户须知</a></p>
+				<button id="btn_register"   class="btn-1 shadow-0 full-width" >Register account</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Register Modal -->
+
+<!-- Quit Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
+<div class="modal fade login-modal" id="quit-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>用户信息</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			
+				<p class="terms">用户名:&#12288;<span id="user_name">user</span></p>
+				<p class="terms">邮&#12288;箱:&#12288;<span id="user_email">user@Qq.com</span></p>
+				<p class="terms">权&#12288;限&#12288;<span id="is_admin">普通用户</span></p>
+				<button id="quit_login" class="btn-1 shadow-0 full-width">退出登陆</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Quit Modal -->
+
+
 <!-- Quick View -->
 <div class="modal fade quick-view" id="quick-view" role="dialog">
 	<div class="position-center-center" role="document">
@@ -426,7 +503,7 @@
 <script src="{% static 'js/wow-min.js' %}"></script>
 <script src="{% static 'js/classie.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-
+<script src="{% static 'js/LoginRegister.js' %}"></script>
 <!-- Switcher JS -->
 <script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/colorswitcher.js' %}"></script>

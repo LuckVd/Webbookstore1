@@ -17,7 +17,7 @@ jQuery( document ).ready(function() {
 
     }
 
-
+   $("#quit-modal").find("#user_name").text("登陆/注册");
     //查看后台是否当前已经登陆
     // function login_display() {
     //     $.ajax({
@@ -58,7 +58,7 @@ jQuery( document ).ready(function() {
                         // $("#quit-modal").find("#go_to_admin").text("进入后台");
                     }
                 }
-         $("a[data-target='#login-modal']").text("Login / Register")
+         $("a[data-target='#login-modal']").text("登陆/注册")
     }
     login_display()
 
@@ -133,6 +133,7 @@ jQuery( document ).ready(function() {
     //登陆事件触发
 
     function judge_user(username, password) {
+        console.log(user_table)
         var len = user_table.id.length;
         for (var i = 0; i < len; i++) {
 
@@ -180,7 +181,7 @@ jQuery( document ).ready(function() {
         //var json_data = {"data_method": "user_id", "user_id": -2};
        //  send_temp(json_data);
         $("a[data-target='#quit-modal']").attr("data-target", "#login-modal");
-        $("a[data-target='#login-modal']").text("Login / Register")
+        $("a[data-target='#login-modal']").text("登陆/注册")
         $("#quit-modal").modal('hide');
     })
 })

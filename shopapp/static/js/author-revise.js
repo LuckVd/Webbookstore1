@@ -36,7 +36,7 @@ jQuery( document ).ready(function() {
         var authorid = $("#findauthorid").val();
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:8000/search/',
+            url: '/search/',
             dataType: "JSON",
             data: {
                 table:'author',
@@ -62,7 +62,7 @@ jQuery( document ).ready(function() {
          console.log(redata);
          $.ajax({
         type: 'post',
-        url:'http://localhost:8000/update/',
+        url:'/update/',
         dataType: "JSON",
              data: {
                 table: 'author',

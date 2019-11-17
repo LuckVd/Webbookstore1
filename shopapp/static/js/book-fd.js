@@ -36,7 +36,7 @@ jQuery( document ).ready(function() {
         var id = $("#findbookid").val();
          $.ajax({
             type: 'POST',
-            url: 'http://localhost:8000/search/',
+            url: '/search/',
             dataType: "JSON",
             data: {
                 table: 'book',
@@ -51,7 +51,7 @@ jQuery( document ).ready(function() {
             var num_of_books=0
             $("#Tab").find("img").attr("src",data.book_image[num_of_books]);
             $("#Tab").find("div.single-product-detail").find("h3").text(data.book_name[num_of_books])
-            $("#Tab").find("div.single-product-detail").find("p").text(data.book_discribe[num_of_books])
+            $("#Tab").find("div.single-product-detail").find("p").text(data.book_describe[num_of_books])
             $("#Tab").find("div.single-product-detail").find("strong").text(data.book_price[num_of_books])
             $("#bookid").text(data.id[num_of_books])
             $("#bookname").text(data.book_name[num_of_books])
@@ -65,7 +65,7 @@ jQuery( document ).ready(function() {
             $("#bookdelete").click(function () {
          $.ajax({
         type: 'post',
-        url: 'http://localhost:8000/delete/',
+        url: '/delete/',
         dataType: "JSON",
         data:{
             table: 'book',

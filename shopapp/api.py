@@ -81,18 +81,21 @@ def search(request):
         if tablename == "user":
             if(request.POST.get("type") == "id"):
                 data = request.POST.get("data")
-                res = serializers.serialize("json", models.user.objects.filter(id=data))
+                #res = serializers.serialize("json", models.user.objects.filter(id=data))
+                res = user_to_json(models.user.objects.filter(id=data))
             else:
-                res = serializers.serialize("json", models.user.objects.all())
-                print(res)
+            #   res = serializers.serialize("json", models.user.objects.all())
+                res = user_to_json(models.user.objects.all())
+
         if tablename == "book":
             if(request.POST.get("type") == "id"):
                 data = request.POST.get("data")
-                res = serializers.serialize("json", models.book.objects.filter(id=data))
+               # res = serializers.serialize("json", models.book.objects.filter(id=data))
+                res = book_to_json(models.book.objects.filter(id=data))
             else:
               #  res = serializers.serialize("json", models.book.objects.all())
-                res=book_to_json( models.book.objects.all())
-                print(res)
+                res = book_to_json( models.book.objects.all())
+
         if tablename == "author":
             if(request.POST.get("type") == "name"):
                 data = request.POST.get("data")
@@ -141,6 +144,26 @@ def book_to_json(book_table):
             'book_stock':list_book_stock,
             'book_detail':list_book_detail,
             'book_image':list_book_image}
+    return data
+
+
+def user_to_json(user_table):
+    list_user_id = []
+    list_user_name = []
+    list_user_password = []
+    list_user_email = []
+    list_user_is_admin =[]
+    for user in user_table:
+        list_user_id.append(user.id)
+        list_user_name.append(user.user_name)
+        list_user_password.append(user.user_password)
+        list_user_email.append(user.user_email)
+        list_user_is_admin.append(user.user_is_admin)
+    data ={'id':list_user_id,
+           'user_name':list_user_name,
+           'user_password':list_user_password,
+           'user_email':list_user_email,
+           'user_is_admin':list_user_is_admin}
     return data
 
 

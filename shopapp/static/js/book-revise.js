@@ -36,7 +36,7 @@ jQuery( document ).ready(function() {
         var bookid = $("#findbookid").val()
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:8000/search/',
+            url: '/search/',
             dataType: "JSON",
             data:{
                 table:'book',
