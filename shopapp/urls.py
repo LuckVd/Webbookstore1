@@ -25,6 +25,14 @@ urlpatterns = [
     url(r'^author-detail/$', views.author_detail),
     url(r'^about/$', views.about),
     url(r'^cart/$', views.cart),
+    #管理员界面的路由
+    url(r'^book_admin/$', views.admin),
+    url(r'^book-fd.html/$', views.book_fd),
+    url(r'^book-revise.html/$', views.book_revise),
+    url(r'^author-add.html/$', views.author_add),
+    url(r'^author-fd.html/$', views.author_fd),
+    url(r'^author-revise.html/$', views.author_revise),
+    url(r'^user-fd.html/$', views.user_fd),
 
     url(r'^$', views.index, name='index'),
     url(r'images/(?P<path>.*)$', serve, {'document_root': 'shopapp/static/images'}),

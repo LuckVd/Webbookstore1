@@ -45,6 +45,7 @@ jQuery( document ).ready(function() {
     function login_display()
     {
        data=sessionStorage.getItem( "user_id" );
+       console.log(data);
        getuserdata();
          if (data != null) {
                     $("a[data-target='#login-modal']").text(user_table.user_name[data])
@@ -53,6 +54,8 @@ jQuery( document ).ready(function() {
                     $("#quit-modal").find("#user_email").text(user_table.user_email[data]);
                     if (user_table.user_is_admin[data] == "1") {
                         $("#quit-modal").find("#is_admin").text("管理员");
+                        // $("#go_to_admin").append(	"<p class=\"terms\" src=\"../book_admin.html\"><span >进入后台</span></p>")
+                        // $("#quit-modal").find("#go_to_admin").text("进入后台");
                     }
                 }
          $("a[data-target='#login-modal']").text("Login / Register")
@@ -135,7 +138,7 @@ jQuery( document ).ready(function() {
 
             if (username == user_table['user_name'][i] && password == user_table['user_password'][i]) {
                 if (user_table['user_is_admin'][i] == "1")
-                    return -1;
+                    return (0-i);
                 return i;
             }
         }
@@ -148,17 +151,22 @@ jQuery( document ).ready(function() {
         var Password = $(this).closest(".sending-form").find("input[placeholder='Password']").val();
 
         var logindata = judge_user(Username, Password)
-        if (logindata == -1) {
-            //管理员登陆成功
-            alert("管理员登陆成功")
-        } else if (logindata == -2) {
+        if (logindata == -2) {
             //登陆失败
-            alert("登陆失败")
+            alert("登陆失败");}
+       else if (logindata <0) {
+            //管理员登陆成功
+            console.log(logindata);
+            $("#login-modal").modal('hide');
+            sessionStorage.setItem( "user_id", 0-logindata );
+             window.location.href = "../book_admin";
+           // login_display();
+
+
         } else {
             //普通用户登陆成功
-            var json_data = {"data_method": "user_id", "user_id": logindata};
             sessionStorage.setItem( "user_id", logindata );
-          //  send_temp(json_data);
+
             alert("登陆成功")
             $("#login-modal").modal('hide');
             login_display();

@@ -76,7 +76,7 @@ jQuery( document ).ready(function() {
         bookadd(data);
          $.ajax({
         type: 'post',
-           url:'http://localhost:8000/add/',
+           url:'/add/',
        contentType:false,
                 data: $( '#upimg').serialize(),
                 processData:false,

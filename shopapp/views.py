@@ -30,3 +30,25 @@ def book_detail(request):
 
 def author_detail(request):
     return render(request,'author-detail.html')
+
+def admin(request):
+    return render(request,'admin.html')
+
+
+def book_fd(request):
+    return render(request,'book-fd.html')
+
+def book_revise(request):
+    return render(request,'book-revise.html')
+
+def author_add(request):
+    return render(request,'author-add.html')
+
+def author_fd(request):
+    return render(request,'author-fd.html')
+
+def author_revise(request):
+    return render(request,'author-revise.html')
+
+def user_fd(request):
+    return render(request,'user-fd.html')
