@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿{% load staticfiles %}
+<!doctype html>
 <html class="no-js" lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,30 +9,28 @@
 <title>Bookstore HTML5 Template</title>
 
 <!-- StyleSheets -->
-<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/color-1.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/transition.css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/color-1.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/transition.css'%}">
 
 <!-- Online Lib -->
-<link rel="stylesheet" href="css/tether.min.css">
-<script src="js/tether.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/tether.min.css'%}">
+<script src="{% static 'js/tether.min.js'%}"></script>
 
 <!-- Switcher CSS -->
-<link href="switcher/switcher.css" rel="stylesheet" type="text/css"/> 
-<link rel="stylesheet" id="skins" href="css/default.css" type="text/css" media="all">
+<link href="{% static 'css/switcher.css'%}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" id="skins" href="{% static 'css/default.css'%}" type="text/css" media="all">
 
 <!-- FontsOnline -->
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400italic,400,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900italic,900,100italic,100' rel='stylesheet' type='text/css'>
-
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
 <!-- JavaScripts -->
-<script src="js/vendor/modernizr.js"></script>
+<script src="{% static 'js/modernizr.js'%}"></script>
 </head>
 <body>
 
@@ -286,36 +285,8 @@
 					
 					<!-- Aside -->
 					<aside class="col-lg-4 col-md-5">
-						<div class="arthor-detail-column">
-							<div class="arthor-img">
-								<img src="images/arthor-detail/img-01.jpg" alt="">
-								<a class="edit-tag" href="#"><i class="fa fa-pencil-square-o"></i>Edit Profile</a>
-							</div>
-							<div class="arthor-detail">
-								<h6>Muriel Barbery</h6>
-								<span>Book Writter</span>
-								<div class="arthor-progress">
-									<span>Activity Level: 78%</span>
-									<progress class="progress progress-warning" max="100" value="65"></progress>
-								</div>
-							</div>
-							<div class="social-activity">
-								<ul class="comments-status">
-									<li><i class="fa fa-envelope"></i>1,089</li>
-									<li><i class="fa fa-heart"></i>1,089</li>
-									<li><i class="fa fa-comment"></i>1,089</li>
-								</ul>
-								<p>Saturday Paper, Australian Book Review and Overland. Our Magic Hour, her debut novel  was shortlisted for the 2014 Victorian.</p>
-								<div>
-									<ul class="social-icons">
-					                	<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-					                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-					                    <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-					                    <li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-					                </ul>
-				                </div>
-				               	<a href="#" class="btn-1 sm shadow-0">Follow me</a> 
-							</div>
+						<div class="arthor-detail-column" id='author-detail'>
+							
 						</div>
 					</aside>
 					<!-- Aside -->
@@ -325,118 +296,21 @@
 						<div class="single-arthor-detail">
 
 							<!-- Widget -->
-							<div class="single-arthor-widget">
-								<h5>Author Overview</h5>
-								<div class="author-overview">
-									<p>Muriel Barbery was born in 1960 in Virginia, where he currently resides. He received a Bachelor of Arts degree in political science from Virginia Commonwealth University and a law degree from the University of Virginia. He practiced law for nine years in Washington, D.C., as both a trial and corporate attorney.</p>
-									<p>David Baldacci's works have appeared in numerous magazines, newspapers, journals and other publications worldwide. He has authored seven original screenplays. His books - all of which have been national and international bestsellers - have been translated into more than 45 languages and sold in more than 80 countries; over 110 million copies are in print worldwide.</p>
+							<div class="single-arthor-widget" >
+								<h4><strong>Author Overview</strong></h4> 
+								<div class="author-overview" id="author-overview">
 								</div>
 							</div>
 							<!-- Widget -->
 
 							<!-- Widget -->
 							<div class="single-arthor-widget">
-								<h5>Recommended Muriel Barbery Titles </h5>
 
-								<!-- Filter Nav -->
-								<div class="filter-tags-holder">
-									<ul id="filterbale-nav" class="option-set">
-										<li><a class="selected" data-filter="*" href="#">All Books</a></li>
-										<li><a data-filter=".most-recent" href="#">Most Recent</a></li>
-										<li><a data-filter=".most-popular" href="#">Most Popular</a></li>
-										<li><a data-filter=".fiction" href="#">Fiction</a></li>
-										<li><a data-filter=".free-books" href="#">Free Books</a></li>
-									</ul>
-								</div>	
-								<!-- Filter Nav -->
+
+
 
 							  	<!-- Recommended -->
 							  	<div id="filter-masonry" class="gallery-masonry">
-
-					    			<!-- Product Box -->
-					    			<div class="col-lg-3 col-xs-6 r-full-width masonry-grid most-recent">
-					    				<div class="recommended-book">
-					    					<div class="recommended-book-img">
-					    						<img src="images/arthor-recommended/img-01.jpg" alt="">
-					    					</div>
-					    					<div class="recommended-book-detail">
-						    					<h6>Jewels of Nizam</h6>
-						    					<span>By Muriel Barbery</span>
-						    					<ul class="rating-stars">
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star-half-o"></i></li>
-				    							</ul>
-			    							</div>
-					    				</div>
-					    			</div>
-					    			<!-- Product Box -->
-
-					    			<!-- Product Box -->
-					    			<div class="col-lg-3 col-xs-6 r-full-width masonry-grid most-popular">
-					    				<div class="recommended-book">
-					    					<div class="recommended-book-img">
-					    						<img src="images/arthor-recommended/img-02.jpg" alt="">
-					    					</div>
-					    					<div class="recommended-book-detail">
-						    					<h6>Cakes &amp; Bakes</h6>
-						    					<span>By Muriel Barbery</span>
-						    					<ul class="rating-stars">
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star-half-o"></i></li>
-				    							</ul>
-			    							</div>
-					    				</div>
-					    			</div>
-					    			<!-- Product Box -->
-
-					    			<!-- Product Box -->
-					    			<div class="col-lg-3 col-xs-6 r-full-width masonry-grid fiction">
-					    				<div class="recommended-book">
-					    					<div class="recommended-book-img">
-					    						<img src="images/arthor-recommended/img-03.jpg" alt="">
-					    					</div>
-					    					<div class="recommended-book-detail">
-						    					<h6>Jamie’s Kitchen</h6>
-						    					<span>By Muriel Barbery</span>
-						    					<ul class="rating-stars">
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star-half-o"></i></li>
-				    							</ul>
-			    							</div>
-					    				</div>
-					    			</div>
-					    			<!-- Product Box -->
-
-					    			<!-- Product Box -->
-					    			<div class="col-lg-3 col-xs-6 r-full-width masonry-grid free-books">
-					    				<div class="recommended-book">
-					    					<div class="recommended-book-img">
-					    						<img src="images/arthor-recommended/img-04.jpg" alt="">
-					    					</div>
-					    					<div class="recommended-book-detail">
-						    					<h6>Inexpensive Family</h6>
-						    					<span>By Muriel Barbery</span>
-						    					<ul class="rating-stars">
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star"></i></li>
-				    								<li><i class="fa fa-star-half-o"></i></li>
-				    							</ul>
-			    							</div>
-					    				</div>
-					    			</div>
-					    			<!-- Product Box -->
-
 							  	</div>
 							  	<!-- Recommended -->
 
@@ -445,46 +319,8 @@
 
 							<!-- Widget -->
 							<div class="single-arthor-widget">
-								<h5><i class="fa fa-graduation-cap"></i>Author Overview</h5>
-								<div class="author-p-detail">
-									<ul>
-										<li>
-											<h6><i class="fa fa-circle"></i><span>O Level</span> 1978-1980 Global Universities</h6>
-											<p>But there is much more to Harvard than massive wealth. The school has produced 47 Nobel Laureates, 32 heads of state, and 48 Pulitzer Prize winners. It boasts the largest academic library in the world (Widener Library, home to some 6 million volumes), as well as leading medical, law, and business schools.</p>
-										</li>
-										<li>
-											<h6><i class="fa fa-circle"></i><span>Master in Fine Arts</span> 1982-1985 Harvard University</h6>
-											<p>But there is much more to Harvard than massive wealth. The school has produced 47 Nobel Laureates, 32 heads of state, and 48 Pulitzer Prize winners. It boasts the largest academic library in the world (Widener Library, home to some 6 million volumes), as well as leading medical, law, and business schools.</p>
-										</li>
-										<li>
-											<h6><i class="fa fa-circle"></i><span>Degree in Journlist </span> 1990-1994 Oxford Universities</h6>
-
-											<p>But there is much more to Harvard than massive wealth. The school has produced 47 Nobel Laureates, 32 heads of state, and 48 Pulitzer Prize winners. It boasts the largest academic library in the world (Widener Library, home to some 6 million volumes), as well as leading medical, law, and business schools.</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<!-- Widget -->
-
-							<!-- Widget -->
-							<div class="single-arthor-widget">
-								<h5><i class="fa fa-trophy"></i>Award of Performance</h5>
-								<div class="author-p-detail">
-									<ul>
-										<li>
-											<h6><i class="fa fa-circle"></i><span>Winner, Indie Award for Non-Fiction, </span>2016</h6>
-											<p>But there is much more to Harvard than massive wealth. The school has produced 47 Nobel Laureates, 32 heads of state, and 48 Pulitzer Prize winners. It boasts the largest academic library in the world (Widener Library, home to some 6 million volumes), as well as leading medical, law, and business schools.</p>
-										</li>
-										<li>
-											<h6><i class="fa fa-circle"></i><span>Shortlisted, Nielsen BookData Booksellers Choice Award, </span> 2016</h6>
-											<p>But there is much more to Harvard than massive wealth. The school has produced 47 Nobel Laureates, 32 heads of state, and 48 Pulitzer Prize winners. It boasts the largest academic library in the world (Widener Library, home to some 6 million volumes), as well as leading medical, law, and business schools.</p>
-										</li>
-										<li>
-											<h6><i class="fa fa-circle"></i><span>Longlisted, Biography Book of the Year, Australian Book Industry Awards,</span> 2016</h6>
-											
-											<p>But there is much more to Harvard than massive wealth. The school has produced 47 Nobel Laureates, 32 heads of state, and 48 Pulitzer Prize winners. It boasts the largest academic library in the world (Widener Library, home to some 6 million volumes), as well as leading medical, law, and business schools.</p>
-										</li>
-									</ul>
+								<h5><i class="fa fa-graduation-cap"></i><strong>>Author Overview</strong></h5>
+								<div class="author-p-detail" id="author-p-detail">
 								</div>
 							</div>
 							<!-- Widget -->
@@ -786,35 +622,400 @@
 <!-- Quick View -->
 
 <!-- Java Script -->
-<script src="js/vendor/jquery.js"></script>        
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
-<script src="js/gmap3.min.js"></script>			
-<script src="js/datepicker.js"></script>					
-<script src="js/contact-form.js"></script>					
-<script src="js/bigslide.js"></script>					
-<script src="js/3d-book-showcase.js"></script>					
-<script src="js/turn.js"></script>							
-<script src="js/jquery-ui.js"></script>								
-<script src="js/mcustom-scrollbar.js"></script>					
-<script src="js/timeliner.js"></script>					
-<script src="js/parallax.js"></script>			   	 
-<script src="js/countdown.js"></script>	
-<script src="js/countTo.js"></script>		
-<script src="js/owl-carousel.js"></script>	
-<script src="js/bxslider.js"></script>	
-<script src="js/appear.js"></script>		 		
-<script src="js/sticky.js"></script>			 		
-<script src="js/prettyPhoto.js"></script>			
-<script src="js/isotope.pkgd.js"></script>					 
-<script src="js/wow-min.js"></script>			
-<script src="js/classie.js"></script>					
-<script src="js/main.js"></script>	
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/gmap3.min.js' %}"></script>
+<script src="{% static 'js/datepicker.js' %}"></script>
+<script src="{% static 'js/contact-form.js' %}"></script>
+<script src="{% static 'js/bigslide.js' %}"></script>
+<script src="{% static 'js/3d-book-showcase.js' %}"></script>
+<script src="{% static 'js/turn.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/mcustom-scrollbar.js' %}"></script>
+<script src="{% static 'js/timeliner.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
+<script src="{% static 'js/countdown.js' %}"></script>
+<script src="{% static 'js/countTo.js' %}"></script>
+<script src="{% static 'js/bxslider.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/sticky.js' %}"></script>
+<script src="{% static 'js/prettyPhoto.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.js' %}"></script>
+<script src="{% static 'js/wow-min.js' %}"></script>
+<script src="{% static 'js/classie.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/LoginRegister.js' %}"></script>
 
 <!-- Switcher JS -->
-<script type="text/javascript" src="switcher/cookie.js"></script>
-<script type="text/javascript" src="switcher/colorswitcher.js"></script>
-<!-- Switcher JS -->
-					
+<script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/colorswitcher.js' %}"></script>
+
+<script>
+	var html = {
+		1: {
+			img: 'images/arthor-detail/img-01.jpg',
+			bookimg1:'images/arthor-recommended/img-01.jpg',
+			bookimg2:'images/arthor-recommended/img-02.jpg',
+			bookimg3:'images/arthor-recommended/img-03.jpg',
+			bookimg4:'images/arthor-recommended/img-04.jpg',
+			bookname1:'繁星·春水',
+			bookname2:'小桔灯',
+			bookname3:'超人',
+			bookname4:'寄小读者',
+			intro: '1919年8月的《晨报》上，冰心发表了第一篇散文《二十一日听审的感想》和第一篇小说《两个家庭》。1923年出国留学前后，开始陆续发表总名为《寄小读者》的通讯散文，成为中国儿童文学的奠基之作。在日本被东京大学聘为第一位外籍女讲师，讲授“中国新文学”课程，于1951年返回中国。',
+			name: '冰心',
+			message:'122',
+			message1: '冰心出生于福州三坊七巷谢家大宅（今鼓楼区杨桥东路17号），该宅院也是林觉民故居，是冰心祖父谢銮恩从林觉民家属购得。祖籍地是长乐横岭乡，现在叫福州市长乐区横岭村。冰心的曾祖父谢以达这一辈进城谋生。次年5月，全家迁至上海。1918年入读协和女子大学理科，开始向往成为医生，后受“五四”运动和新文化运动的影响，转文学系学习，曾被选为学生会文书，投身学生运动，并因此参加北京女学界联合会宣传股的工作。此期间著有小说《斯人独憔悴》、诗集《繁星·春水》，短篇小说《超人》。',
+			message2: '1919年8月的《晨报》上，冰心发表第一篇散文《二十一日听审的感想》和第一篇小说《两个家庭》。后者第一次使用了“冰心”这个笔名。由于作品直接涉及到重大的社会问题，很快发生影响。之后所写的《斯人独憔悴》《去国》《秋风秋雨愁煞人》等“问题小说”，突出反映了封建家庭对人性的摧残、面对新世界两代人的激烈冲突以及军阀混战给人民带来的苦痛。',
+			message3: '进入燕京大学，燕大期间，冰心在一个牧师家里受洗归主。毕业后，到美国波士顿的威尔斯利学院攻读英国文学，专事文学研究。出国留学前后，曾把旅途和异邦的见闻写成散文寄回国内发表，结集为《寄小读者》，是中国早期的儿童文学作品。同年，以优异的成绩取得美国威尔斯利女子大学的奖学金。冰心因心功能衰弱入住北京医院；1999年2月13日病情恶化，于同年2月28日晚上九点于北京医院逝世，享年99岁。在冰心报病危之后，朱镕基、李瑞环、胡锦涛等中央领导人及中国作家协会领导和作家代表曾亲自到医院看望她。',
+			collection: '100',
+			email: '1000'
+		},
+		2: {
+			img: 'images/arthor-detail/img-02.jpg',
+			bookimg1:'images/arthor-recommended/img-05.jpg',
+			bookimg2:'images/arthor-recommended/img-06.jpg',
+			bookimg3:'images/arthor-recommended/img-07.jpg',
+			bookimg4:'images/arthor-recommended/img-08.jpg',
+			bookname1:'谈艺录',
+			bookname2:'走在人生边上',
+			bookname3:'围城',
+			bookname4:'人兽鬼',
+			intro: '1929年，考入清华大学外文系。1932年，在清华大学古月堂前结识杨绛。1937年，以《十七十八世纪英国文学中的中国》一文获牛津大学艾克赛特学院学士学位。1941年，完成《谈艺录》《写在人生边上》的写作。1947年，长篇小说《围城》由上海晨光出版公司出版。1958年创作的《宋诗选注》，列入中国古典文学读本丛书。1972年3月，六十二岁的钱钟书开始写作《管锥篇》。1976年，由钱钟书参与翻译的《毛泽东诗词》英译本出版。1982年，创作的《管锥编增订》出版。',
+			name: '钱钟书',
+			message:'652',
+			message1:'出生于江苏无锡的一个教育世家，伯父钱基成，父亲钱基博（子泉），叔父钱基厚（钱孙卿）。1925年，钱钟书十五岁返家度暑假，乃得知《古文辞类纂》《骈体文钞》《十八家诗钞》 等选本，从此开始系统阅读，是一生治学之始。1932年，在清华大学古月堂前结识杨绛。1933年，与杨绛订婚。清华大学外国语文系毕业后，在上海光华大学（今华东师范大学）任教。1935年，以第一名成绩（87.95分，为历届中美和中英庚款平均分最高）考取英国庚子赔款公费留学生，赴英国牛津大学艾克赛特学院英文系留学，与杨绛同船赴英。',
+			message2:'以《十七十八世纪英国文学中的中国》一文获牛津大学艾克赛特学院学士学位。之后随妻子杨绛赴法国巴黎大学从事研究。女儿钱瑗出生。1938年秋，与杨绛乘法国邮船回国。被清华大学破例聘为教授，次年转赴国立蓝田师范学院任英文系主任，并开始了《谈艺录》的写作。1941年，由广西乘船到上海，珍珠港事件爆发，被困上海，任教于震旦女子文理学校，其间完成了《谈艺录》《写在人生边上》的写作。散文随笔集《写在人生边上》由开明书店出版，是“开明文学新刊”之一。写作《围城》。其时困顿于上海沦陷区时期的经历和情绪，对《围城》题旨和书名的确定有重要的影响。',
+			message3:'六十九岁的钱钟书参加中国社会科学院代表团赴美国访问。访问了哥伦比亚大学、加利福尼亚大学贝克莱分校等，大受欢迎。《管锥编》 1—4册由中华书局相继出版。《旧文四篇》由上海古籍出版社出版，此书收有《中国诗和中国画》《读〈拉奥孔〉》《通感》《林纾的翻译》等4 篇文章。《宋诗选注》重印。1990年12月，电视连续剧《围城》在中央电视台播出，获得普遍好评。1991年，全国18家电视台拍摄《中国当代文化名人》，钱钟书为首批36人之一，但他谢绝拍摄。1998年12月19日上午7时38分，钱钟书先生因病在北京逝世，享年88岁。',
+			collection: '102',
+			email: '1002'
+		},
+		3: {
+			img: 'images/arthor-detail/img-03.jpg',
+			bookimg1:'images/arthor-recommended/img-09.jpg',
+			bookimg2:'images/arthor-recommended/img-10.jpg',
+			bookimg3:'images/arthor-recommended/img-11.jpg',
+			bookimg4:'images/arthor-recommended/img-12.jpg',
+			bookname1:'家',
+			bookname2:'雾雨电',
+			bookname3:'随想录',
+			bookname4:'灭亡',
+			intro: '巴金在文革后撰写的《随想录》，内容朴实、感情真挚，充满着作者的忏悔和自省，巴金因此被誉为“二十世纪中国文学的良心”。',
+			name: '巴金',
+			message: '113',
+			message1:'考入成都外语专门学校。读书期间，在“五四’新潮思想影响下，加入进步青年组织“均社”。1923年，离成都去上海、南京求学。1925年，8月，毕业于南京东南大学附中，准备报考北京大学，因病于上海休养。9月，参加发起无政府主义组织上海民众社并出版《民众》半月刊。本时期翻译克鲁泡特金的一些著作。1927年1月，赴法国巴黎求学。在法期间，一方面大量阅读西方哲学和文学作品；另一方面，时时关心着中国，开始写作《灭亡》。',
+			message2:'1935年，8月，从日本回国。主持上海文化生活出版社编务，主编《文化生活丛刊》、《文学丛刊》、《文学生活小丛刊》等。 1937年，抗战全面爆发任《救亡日报》编委，与茅盾共同主编《呐喊》（后改名《烽火》）杂志。1938年，2月，写完《春》。3月，参加文协，被选为理事。1950年后任平明出版社总编辑，上海市文学艺术界联合会副主席，中国作家协会上海分会主席。1950年，7月，当选为上海文联副主席。11月，他参加了华沙第二次世界保卫和平大会。后又五次访问前苏联。',
+			message3:'任《收获》主编。同年始编《巴金文集》14卷本，至1961年编定后出版。1966年8月，中国作协上海分会贴出攻击巴金的大字报，不久巴金即遭批判，被关进“牛棚”。1967年5月，《人民日报》发表署名文章，巴金被点名批判。随后在上海奉贤县“五七干校”劳动两年半。2003年11月，中国国务院授予巴金“人民作家”称号。2005年10月17日在上海逝世，享年101岁。',
+			collection: '103',
+			email: '1003'
+		},
+		4: {
+			img: 'images/arthor-detail/img-04.jpg',
+			bookimg1:'images/arthor-recommended/img-13.jpg',
+			bookimg2:'images/arthor-recommended/img-14.jpg',
+			bookimg3:'images/arthor-recommended/img-15.jpg',
+			bookimg4:'images/arthor-recommended/img-16.jpg',
+			bookname1:'撒哈拉的故事',
+			bookname2:'万水千山走遍',
+			bookname3:'温柔的夜',
+			bookname4:'滚滚红尘',
+			intro: '1948年，随父母迁居台湾。1967年赴西班牙留学，后去德国、美国等。1973年定居西属撒哈拉沙漠和荷西结婚。1981年回台后，曾在文化大学任教，1984年辞去教职，而以写作、演讲为重心。',
+			name: '三毛',
+			message: '114',
+			message1:'三毛原籍浙江舟山定海，1943年3月26日（农历2月21日）生于重庆市南岸区黄桷垭正街。幼年时期的三毛就喜欢读书，五年级下学期第一次看《红楼梦》。初中时期几乎看遍了市面上的世界名著。初二那年休学，由父母亲悉心教导，在诗词古文、英文方面，打下基础。并跟随顾福生、韩湘宁、彭万墀三位画家习画。三毛在她的散文《我的三位老师》中记录了这三位绘画老师。1964年，得到文化大学创办人张其昀先生的特许，到该校哲学系当旁听生，课业成绩优异。',
+			message2:'1967年再次休学，只身远赴西班牙。在三年之间，前后就读西班牙马德里大学、德国哥德书院，在美国伊诺大学法学图书馆工作。对她的人生经验和语文进修上有很大助益。1970年回国，受张其昀之邀聘在文大德文系、哲学系任教。因未婚夫猝逝，再到西班牙。与分开6年的荷西重逢。1973年，于西属撒哈拉沙漠的当地法院，与荷西公证结婚。沙漠时期的生活激发了她潜藏的写作才华，并受当时《联合报》主编的鼓励，作品源源不断，并开始结集出书。1976年5月，出版第一部作品《撒哈拉的故事》。',
+			message3:'首次回大陆家乡，发现自己的作品在大陆也拥有许多的读者。并专程拜访以漫画《三毛流浪记》驰名的张乐平先生，了却夙愿。1990年，从事剧本写作，完成第一部中文剧本，也是她最后一部作品《滚滚红尘》。1991年1月2日，她因子宫内膜肥厚，住进台湾荣民总医院，3日开刀完成手术。4日清晨，医院清洁女工进入7楼妇产科单人特等病房，打扫浴室的时候，看见坐厕旁点滴架的吊钩上，悬挂着三毛被尼龙丝袜吊颈的身体。她身着白底红花睡衣，现场没有任何遗书。法医推断三毛死亡的时间是凌晨2时。',
+			collection: '104',
+			email: '1004'
+		},
+		5: {
+			img: 'images/arthor-detail/img-05.jpg',
+			bookimg1:'images/arthor-recommended/img-17.jpg',
+			bookimg2:'images/arthor-recommended/img-18.jpg',
+			bookimg3:'images/arthor-recommended/img-19.jpg',
+			bookimg4:'images/arthor-recommended/img-20.jpg',
+			bookname1:'倾城之恋',
+			bookname2:'半生缘',
+			bookname3:'第一炉香',
+			bookname4:'红玫瑰与白玫瑰',
+			intro: '1943至1944年，创作和发表了《沉香屑·第一炉香》《沉香屑·第二炉香》《茉莉香片》《倾城之恋》《红玫瑰与白玫瑰》等小说。1955年，张爱玲赴美国定居，创作英文小说多部，但仅出版一部。1969年以后主要从事古典小说的研究，著有红学论集《红楼梦魇》。1995年9月在美国洛杉矶去世，终年75岁。有《张爱玲全集》行世。',
+			name: '张爱玲',
+			message: '116',
+			message1:'出生在上海公共租界西区一幢没落贵族府邸。张爱玲家世显赫，祖父张佩纶是清末名臣，祖母李菊耦是朝廷重臣李鸿章的长女。父亲张廷重（张志沂）属于遗少型的少爷，母亲黄逸梵（黄素琼）是新式女性。1923年，父亲在津浦铁路局谋得一英文秘书职位，父母和姑姑张茂渊由上海搬到天津。1927年，在私塾读诗背经的同时，开始写小说。第一部小说写一个家庭悲剧，第二部小说是关于一个女郎失恋自杀的故事，还写过一篇类似乌托邦的小说《快乐村》。',
+			message2:'张爱玲在《紫罗兰》上发表小说《沉香屑·第一炉香》，该小说使张爱玲在上海文坛一炮打响，崭露头角。此后，张爱玲一发不可收拾，陆续了发表《沉香屑·第二炉香》、《茉莉香片》、《到底是上海人》、《心经》、《倾城之恋》等一系列小说，散文。初春，张爱玲因小说《封锁》与胡兰成相识、相知、相恋。不久后，便与其结婚。然而，这次婚姻只维持了两年。这段没有结果的婚恋是张爱玲人生中一段不寻常的经历，也是让她饱受非议的一段经历。同年，张爱玲不仅创作了《花凋》、《鸿鸾禧》、《红玫瑰与白玫瑰》等作品，还出版了她一生中最重要的小说集《传奇》以及散文集《流言》，并且《苦竹》上发表《自己的文章》以回应傅雷的批评，张爱玲也因此在上海文坛大放异彩。',
+			message3:'1977-1993年，张爱玲陆续完成了《色，戒》、《惘然记》、《对照记》的创作，并出版了《红楼梦》评论文集《红楼梦魇》。1995年9月8日，张爱玲在洛杉矶西木区家中寓所死后一星期才被发现，享年75岁。生前指定林式同为遗嘱执行人。9月19日，遗体在洛杉矶惠泽尔市玫瑰岗墓园火化。9月30日，骨灰由林式同、张错、高全之、张绍迁、许媛翔等人携带出海，撒于太平洋。',
+			collection: '105',
+			email: '1005'
+		},
+		6: {
+			img: 'images/arthor-detail/img-06.jpg',
+			bookimg1:'images/arthor-recommended/img-21.jpg',
+			bookimg2:'images/arthor-recommended/img-22.jpg',
+			bookimg3:'images/arthor-recommended/img-23.jpg',
+			bookimg4:'images/arthor-recommended/img-24.jpg',
+			bookname1:'子夜',
+			bookname2:'夜读偶记',
+			bookname3:'春蚕',
+			bookname4:'虹',
+			intro: '茅盾出生在一个思想观念颇为新颖的家庭里，从小接受新式的教育。后考入北京大学预科，毕业后入商务印书馆工作，从此走上了改革中国文艺的道路，他是新文化运动的先驱者、中国革命文艺的奠基人之一。',
+			name: '茅盾',
+			message: '116',
+			message1:'茅盾考入北京大学预科第一类。预科毕业后，入商务印书馆编译所工作。 1920年初，主持《小说月报》“小说新潮栏”编务工作。同年11月，茅盾正式接编《小说月报》。参与发起组织“文学研究会”，接编并改革《小说余月报》。7月，中国共产党成立，由上海共产主义小组成员转为正式党员。',
+			message2:'1927年，1月赴武汉，任中央军事政治学校武汉分校教官。约4月，任汉口《民国日报》主编。7月间，从武汉至南昌不顺，阻于牯岭。8月，南昌起义失败，试图与党组织取得联系而不得，从此失去与党组织失去联系。9月，于上海以茅盾为笔名发表小说《幻灭》。1929年，论文《读<倪焕之>》发表。1930年4月，回上海。不久加入中国左翼作家联盟。',
+			message3:'1958年，1月，开始创作《夜读偶记》。3月，《茅盾文集》第一卷由人民文学出版社出版。1961年，《茅盾文集》十卷出齐。1981年3月27日，逝于北京。3月31日，中共中央根据茅盾生前的请求决定恢复他的中国共产党党籍，党龄从1921年算起。1984年-1997年，人民文学出版社出版了38卷本的《茅盾全集》。',
+			collection: '106',
+			email: '1006'
+		},
+		7: {
+			img: 'images/arthor-detail/img-07.jpg',
+			bookimg1:'images/arthor-recommended/img-01.jpg',
+			bookimg2:'images/arthor-recommended/img-02.jpg',
+			bookimg3:'images/arthor-recommended/img-03.jpg',
+			bookimg4:'images/arthor-recommended/img-04.jpg',
+			bookname1:'繁星·春水',
+			bookname2:'小桔灯',
+			bookname3:'超人',
+			bookname4:'寄小读者',
+			intro: '966年毕业于上海戏剧学院戏剧文学系。 [1]  1980年陆续出版了《戏剧理论史稿》《中国戏剧文化史述》《戏剧审美心理学》。1985年成为中国大陆最年轻的文科教授。 [3]  1986年被授予上海十大学术精英。1987年被授予国家级突出贡献专家的荣誉称号。',
+			name: '余秋雨',
+			message: '117',
+			message1:'1957年——1963年，先后就读于上海新会中学、晋元中学、培进中学至高中毕业。 1963年考入上海戏剧学院戏剧文学系，入学后以下乡参加农业劳动为主。1966年遇到“文革”灾难，家破人亡。父亲余学文先生因被检举有“错误言论”而关押十年，全家经济来源断绝；唯一能接济的叔叔余志士先生又被造反派暴徒迫害致死。在饥寒交迫之中，1968年被下放到27军军垦农场服劳役，极端艰苦。',
+			message2:'1976年初，编写教材被批判为“右倾翻案”，便逃到浙江省奉化县大桥镇半山一座封闭的老藏书楼研读中国古代文献，直至此年10月“文革”结束，下山返回上海。1977年——1985年投入重建当代文化的学术大潮，陆续出版了《世界戏剧学》、《中国戏剧史》、《观众心理学》、《艺术创造学》、《Some Observations on the Aesthetics of PrimitiveTheatre》等一系列学术著作，先后获全国优秀教材一等奖、上海哲学社会科学著作奖、全国戏剧理论著作奖。 [6]  其中，独自在灾难时期开始编写的《世界戏剧学》，出版至今三十余年仍是全国在这一学科的唯一权威教材。',
+			message3:'2016年9月9日，辞去人文艺术学院院长职务。被荣聘为澳门科技大学荣誉院长和特聘教授。 2017年8月，《门孔》由湖南文艺出版社出版。 2019年4月，《雨夜短文》由天地社出版社出版。1985年2月由上海各大学的学术前辈王元化、蒋孔阳、伍蠡甫等资深教授联名推荐，在没有担任过副教授的情况下直接晋升为正教授，是当时全国最年轻的文科正教授。',
+			collection: '107',
+			email: '1007'
+		},
+		8: {
+			img: 'images/arthor-detail/img-08.jpg',
+			bookimg1:'images/arthor-recommended/img-01.jpg',
+			bookimg2:'images/arthor-recommended/img-02.jpg',
+			bookimg3:'images/arthor-recommended/img-03.jpg',
+			bookimg4:'images/arthor-recommended/img-04.jpg',
+			bookname1:'繁星·春水',
+			bookname2:'小桔灯',
+			bookname3:'超人',
+			bookname4:'寄小读者',
+			intro: '因一系列乡土作品充满“怀乡”“怨乡”的复杂情感，被称为“寻根文学”作家。据不完全统计，莫言的作品至少已经被翻译成40种语言。2019年9月23日，莫言长篇小说《红高粱家族》入选“新中国70年70部长篇小说典藏”。',
+			name: '莫言',
+			message: '118',
+			message1:'1985年初，莫言在《中国作家》杂志发表《透明的红萝卜》而一举成名。 同年，冯牧在北京华侨大厦主持莫言创作研讨会，汪曾祺、史铁生、李陀、雷达、曾镇南都高度评价了《透明的红萝卜》。 [20]  1985年底，张洁在西德出席交流活动时，被问到1985年中国文坛有什么大事发生，张洁回答：“要说大事，那就是出现了莫言。”张洁形容《透明的红萝卜》是一个天才作家诞生的重要信号。',
+			message2:'1988年2月，由《红高粱》改编的同名电影在柏林电影节获得金熊奖，成为首部获得国际A类电影节最高荣誉的中国电影； [5]  4月，莫言发表长篇小说《天堂蒜薹之歌》，后来这部社会批判作品受到当时的政治风波影响，一度只能在港台出版。美国著名汉学家葛浩文在看到这部小说后，感到非常震撼，决定开始翻译莫言小说，葛浩文也成为了日后莫言作品走向世界的功臣。1988年秋，莫言参加了中国作协委托北京师范大学办的研究生班，在鲁迅文学院期间，莫言创作了长篇讽刺小说《酒国》，被葛浩文誉为创作手法最有想象力、最为丰富复杂的中国小说。1991年，莫言在北京师范大学鲁迅文学院创作研究生班获得文艺学硕士学位。',
+			message3:'1992年，莫言作品的第一部英译本中短篇小说集《爆炸》（Explosions and other stories）在美国出版，由Janice Wickeri和Duncan Hewitt翻译。美国重量级文学评论杂志《World Literature Today》评价说：“有如福克纳，莫言带领读者进入一个想象力鲜活丰富、圆满自足的世界。”2005年莫言获意大利诺尼诺国际文学奖颁奖词 1993年，由葛浩文翻译的《红高粱》英译本在欧美出版，引起热烈回响，被《World Literature Today》评选为“1993年全球最佳小说”。《纽约时报》评论说：“通过《红高粱》这部小说，莫言把高密东北乡安放在世界文明。',
+			collection: '108',
+			email: '1008'
+		},
+		9: {
+			img: 'images/arthor-detail/img-09.jpg',
+			bookimg1:'images/arthor-recommended/img-01.jpg',
+			bookimg2:'images/arthor-recommended/img-02.jpg',
+			bookimg3:'images/arthor-recommended/img-03.jpg',
+			bookimg4:'images/arthor-recommended/img-04.jpg',
+			bookname1:'繁星·春水',
+			bookname2:'小桔灯',
+			bookname3:'超人',
+			bookname4:'寄小读者',
+			intro: '韩寒生于上海市金山区亭林镇亭东村二大队，小学时就读于亭林中心小学，初中时就读于朱泾镇的罗星中学，初中时开始有文章发表，并作为体育特长生以低于录取线14分的成绩破格考入上海市松江二中 。1997年，韩寒在《少年文艺》等刊物发表《生涯模式》等作品。',
+			name: '韩寒',
+			message: '119',
+			message1:'1999年，在上高一的韩寒以《求医》和《书店》通过首届全国新概念作文比赛初赛，并以《杯中窥人》一文获得首届全国新概念作文比赛一等奖。后因期末考试七科不及格而留级，被报道后引发社会关于素质教育政策及“学校应当培养全才还是专才”等系列教育问题的激烈讨论。2000年，他凭借作品《穿着棉袄洗澡》获得第二届全国新概念作文比赛二等奖 。他发表的首部小说是一部反映上海初三学生生活的小说《三重门》。通过这部小说的发行，他一举成名。该书累计发行200万册，中国近20年销量最大的文学类作品。在留级后，再次挂科七门并于4月4日在高一退学。退学前，在松江二中老师们面前，韩寒被问起，你退学了，以后要拿什么养活自己。“稿费啊。”韩寒说。他的回答引来一片笑声。',
+			message2:'2002年，他出版小说《像少年啦飞驰》，该书获得当年全国图书畅销榜排名第一。此外，他还出版作品精选集《毒》和《毒2》。2012年6月，韩寒发布了APP阅读应用“ONE·一个”，类似于电子杂志，每天向读者推出一篇文章、一张图、一句话、一个问题。7月，韩寒为李宇春的《似火年华》填词。',
+			message3:'7月10日，“韩寒状告百度文库侵权”一案，在北京海淀区人民法院开庭。7月18日，韩寒的杂文集《脱节的国度》在中国香港书展发布。9月初，为范冰冰主演电影《二次曝光》主题曲《在我想起来》填词。9月17日，“韩寒状告百度文库侵权”案由海淀法院作出一审判决，判决百度赔偿韩寒经济损失和维权费用9.58万元，但驳回了韩寒要求关闭百度文库的诉讼请求。2016年3月22日，第十届作家榜主榜发布，韩寒位于第55名。',
+			collection: '109',
+			email: '1009'
+		},
+		10: {
+			img: 'images/arthor-detail/img-10.jpg',
+			bookimg1:'images/arthor-recommended/img-01.jpg',
+			bookimg2:'images/arthor-recommended/img-02.jpg',
+			bookimg3:'images/arthor-recommended/img-03.jpg',
+			bookimg4:'images/arthor-recommended/img-04.jpg',
+			bookname1:'繁星·春水',
+			bookname2:'小桔灯',
+			bookname3:'超人',
+			bookname4:'寄小读者',
+			intro: '高中时期以“第四维”为笔名在网站榕树下发表文章。2002年出版第一部作品《爱与痛的边缘》。2003年，因玄幻小说《幻城》而被人们熟知和关注。2004年，郭敬明成立“岛”工作室，开始主编《岛》系列杂志。2005年，郭敬明出版了小说《1995——2005夏至未至》。2007年，郭敬明出版了小说《悲伤逆流成河》。2008年至2012年陆续出版《小时代》“三部曲”。',
+			name: '郭敬明',
+			message: '1110',
+			message1:'1998年，郭敬明进入自贡市富顺县第二中学读书。升入高中的他依然坚持着写作的兴趣爱好，每隔一段时间都会向杂志社和文学网站投稿。在文学网站“榕树下”上，郭敬明用网名“第四维”发表了许多作品。他的第一篇稿子《剧本》通过了第三届的新概念作文大赛初赛。2001年，18岁的郭敬明前往上海参加决赛，以《假如明天没有太阳》一文获得第三届全国新概念作文大赛一等奖。',
+			message2:'2007年5月，郭敬明出版了继《夏至未至》之后又一部校园小说《悲伤逆流成河》，一周时间销量突破百万册，三天上当月中国图书销量排行前三名 。年底，郭敬明加入中国作协，并发行《悲伤逆流成河》的百万黄金版 [22]  ，出版了《岛·庞贝》、《N世界》。首部以郭敬明作品改编的偶像剧《梦里花落知多少》也在11月份开播。2008年9月27日，《小时代1.0折纸时代》的正式出版发售，上市3个月，创下了2008年图书销售的第一名。',
+			message3:'2010年，郭敬明筹备了自己出道十年纪念作品，继《幻城》以来第二本玄幻小说《临界·爵迹》系列。该书上世前，郭敬明在网络发布了预告片。8月24日，《临界·爵迹Ⅰ》作为该系列作品的第一部首先在全国问世，首印200万册发售。2011年12月，《小时代3.0刺金时代》问世，首印200万册，获得2012年图书销量榜单冠军。2013年至2014年，先后出版“十年心路历程投影三卷散文集”《愿风裁尘》《守岁白驹》《怀石逾沙》。2016年3月，郭敬明和中南博集天卷签约仪式在京举行，郭敬明透露将出《爵迹》新书四部曲。',
+			collection: '1010',
+			email: '10010'
+		},
+		11: {
+			img: 'images/arthor-detail/img-11.jpg',
+			bookimg1:'images/arthor-recommended/img-01.jpg',
+			bookimg2:'images/arthor-recommended/img-02.jpg',
+			bookimg3:'images/arthor-recommended/img-03.jpg',
+			bookimg4:'images/arthor-recommended/img-04.jpg',
+			bookname1:'繁星·春水',
+			bookname2:'小桔灯',
+			bookname3:'超人',
+			bookname4:'寄小读者',
+			intro: '鲁迅一生在文学创作、文学批评、思想研究、文学史研究、翻译、美术理论引进、基础科学介绍和古籍校勘与研究等多个领域具有重大贡献。他对于五四运动以后的中国社会思想文化发展具有重大影响，蜚声世界文坛，尤其在韩国、日本思想文化领域有极其重要的地位和影响，被誉为“二十世纪东亚文化地图上占最大领土的作家”。',
+			name: '鲁迅',
+			message: '1111',
+			message1:'光绪三十二年（1906年）1月，课间观“日俄战争教育片”，深受刺激，决定弃医从文。6月，将学籍列入“东京独逸语协会”所设的德语学校。夏秋间，被骗回国与朱安结婚。旋即复赴日本，7月，从仙台回到东京，不再入学读书，专门从事文艺译著工作，此后几年通过不同方式学习了德语，俄语。光绪三十四年（1908年），从章太炎先生学习，为“光复会”会员，并与二弟作人译《域外小说集》，期间生活艰难，以校对书稿补贴生活。 宣统元年（1909年），《域外小说集》二册出版。',
+			message2:'民国十六年（1927年），1月赴中山大学任教。3月，与中共两广区委书记陈延年会见。4月1日，赴黄埔军校发表演讲《革命时代的文学》，12日，“四一二反革命政变”发生，29日，营救进步学生无果愤然辞职。8月，发表《魏晋风度及文章与药及酒之关系》。9月，致信台静农，拒绝作为诺贝尔文学奖候选人，离开广州赴上海，并与许广平在上海开始同居生活。12月，与梁实秋等人就“第三种人”、“自由人”发生论争，双方争论持久，影响巨大。',
+			message3:'民国十七年（1928年）春，参加中国革命互济会。本年，与创造社、太阳社大部分成员就“革命文学”问题展开论争。是年开始大量搜集马克思主义著作，并为之翻译。同时开始提倡革命美术，倡导现代木刻运动。 民国十八年（1929年）9月27日，许广平生子，鲁迅为其取名“周海婴”。年底，与冯雪峰多次磋商组建“中国左翼作家联盟。”',
+			collection: '1011',
+			email: '10011'
+		},
+		12: {
+			img: 'images/arthor-detail/img-12.jpg',
+			bookimg1:'images/arthor-recommended/img-01.jpg',
+			bookimg2:'images/arthor-recommended/img-02.jpg',
+			bookimg3:'images/arthor-recommended/img-03.jpg',
+			bookimg4:'images/arthor-recommended/img-04.jpg',
+			bookname1:'繁星·春水',
+			bookname2:'小桔灯',
+			bookname3:'超人',
+			bookname4:'寄小读者',
+			intro: '代表著作有处女作《梦珂》，长篇小说《太阳照在桑干河上》《莎菲女士的日记》，短篇小说集《在黑暗中》等。1986年3月4日，丁玲在北京多福巷家中逝世，享年82岁。',
+			name: '丁玲',
+			message: '1112',
+			message1:'民国七年（1918年），丁玲就读于桃源第二女子师范学校预科。民国八年（1919年），丁玲转入长沙周南女子中学。后入岳云中学就读。民国十一年（1922年），丁玲赶往上海，在陈独秀、李达等创办的平民女子学校学习。在长沙等地上中学时，受到五四运动思潮的影响。 民国十二年（1923年），丁玲经瞿秋白等介绍，入中国共产党创办的上海大学中国文学系学习。次年夏转赴北京，曾在北京大学旁听文学课程。',
+			message2:'1955年和1957年，丁玲两次遭受极“左”路线的残酷迫害，被错划为“反党小集团”、右派分子，下放到黑龙江垦区（现今汤原农场、宝泉岭农场）劳动12年，期间创作了《杜晚香》。“文革”中又被关进监狱5年。粉碎“四人帮”后，丁玲的冤案逐步得到平反。1975年春，丁玲获释后被安排到山西农村。她和丈夫陈明将补发的工资捐献出1万元，用于农村生产建设。',
+			message3:'1984年，中央组织部颁发《关于为丁玲同志恢复名誉的通知》，彻底推倒多年来强加给她的一切不实之词，肯定她是“一个对党对革命忠实的共产党员”。丁玲在晚年，不顾体弱多病，勤奋写出了《魍魉世界》、《风雪人间》等100万字的作品，创办并主编《中国》文学杂志，热情培养青年作家。1986年3月4日，丁玲在北京多福巷家中逝世，享年82岁。',
+			collection: '1012',
+			email: '10012'
+		}
+		
+	}
+	jQuery( document ).ready(function() {
+		var id = window.location.search.split('=')[1];
+		$("#author-detail").append(
+			"<div class=\"arthor-img\">"+
+				"<img src="+html[id].img + "  alt=\"\">"+
+				"<a class=\"edit-tag\" href=\"#\"><i class=\"fa fa-pencil-square-o\"></i>Edit Profile</a>"+
+			"</div>"+
+			"<div class=\"arthor-detail\" >"+
+				"<h6>"+html[id].name+"</h6>"+
+				"<span>Book Writter</span>"+
+				"<div class=\"arthor-progress\">"+
+					"<span>Activity Level: 78%</span>"+
+					"<progress class=\"progress progress-warning\" max=\"100\" value=\"65\"></progress>"+
+				"</div>"+
+			"</div>"+
+			"<div class=\"social-activity\">"+
+				"<ul class=\"comments-status\">"+
+					"<li><i class=\"fa fa-envelope\"></i>"+html[id].email+"</li>"+
+					"<li><i class=\"fa fa-heart\"></i>"+html[id].collection+"</li>"+
+					"<li><i class=\"fa fa-comment\"></i>"+html[id].message+"</li>"+
+				"</ul>"+
+				"<p>Saturday Paper, Book Review and Overland. Our Magic Hour, debut novel  was shortlisted for the 2014 Victorian.</p>"+
+				"<div>"+
+					"<ul class=\"social-icons\">"+
+						"<li><a class=\"facebook\" href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>"+
+						"<li><a class=\"twitter\" href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>"+
+						"<li><a class=\"youtube\" href=\"#\"><i class=\"fa fa-youtube-play\"></i></a></li>"+
+						"<li><a class=\"pinterest\" href=\"#\"><i class=\"fa fa-pinterest-p\"></i></a></li>"+
+					"</ul>"+
+				"</div>"+
+			"</div>"
+		)
+		$('#author-overview').append(
+			"<p>"+html[id].intro+"</p>"
+		)
+		$('#author-p-detail').append(
+			"<ul>"+
+				"<li>"+
+					"<h6><i class=\"fa fa-circle\"></i><span>O Level</span> 1978-1980 Global Universities</h6>"+
+				"<p>"+html[id].message1+"</p>"+
+				"</li>"+
+				"<li>"+
+					"<h6><i class=\"fa fa-circle\"></i><span>Master in Fine Arts</span> 1982-1985 Harvard</h6>"+
+					"<p>"+html[id].message2+"</p>"+
+				"</li>"+
+				"<li>"+
+					"<h6><i class=\"fa fa-circle\"></i><span>Degree in Journlist </span> 1990-1994 Oxford</h6>"+
+					"<p>"+html[id].message3+"</p>"+
+				"</li>"+
+		    "</ul>"
+		)
+		$('#filter-masonry').append(
+			<!-- Product Box -->
+			"<div class=\"col-lg-3 col-xs-6 r-full-width masonry-grid most-recent\">"+
+				"<div class=\"recommended-book\">"+
+					"<div class=\"recommended-book-img\">"+
+						"<img src="+html[id].bookimg1+" alt=\"\">"+
+					"</div>"+
+					"<div class=\"recommended-book-detail\">"+
+						"<h6>"+html[id].bookname1+"</h6>"+
+						"<span>By" +html[id].name+"</span>"+
+						"<ul class=\"rating-stars\">"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+					    	"<li><i class=\"fa fa-star\"></i></li>"+
+						    "<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star-half-o\"></i></li>"+
+						"</ul>"+
+					"</div>"+
+				"</div>"+
+			"</div>"+
+			<!-- Product Box -->
+
+			<!-- Product Box -->
+			"<div class=\"col-lg-3 col-xs-6 r-full-width masonry-grid most-recent\">"+
+				"<div class=\"recommended-book\">"+
+					"<div class=\"recommended-book-img\">"+
+						"<img src="+html[id].bookimg2+" alt=\"\">"+
+					"</div>"+
+					"<div class=\"recommended-book-detail\">"+
+						"<h6>"+html[id].bookname2+"</h6>"+
+						"<span>By "+html[id].name+"</span>"+
+						"<ul class=\"rating-stars\">"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+					    	"<li><i class=\"fa fa-star\"></i></li>"+
+						    "<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star-half-o\"></i></li>"+
+						"</ul>"+
+					"</div>"+
+				"</div>"+
+			"</div>"+
+
+			<!-- Product Box -->
+			"<div class=\"col-lg-3 col-xs-6 r-full-width masonry-grid most-recent\">"+
+				"<div class=\"recommended-book\">"+
+					"<div class=\"recommended-book-img\">"+
+						"<img src="+html[id].bookimg3+" alt=\"\">"+
+					"</div>"+
+					"<div class=\"recommended-book-detail\">"+
+						"<h6>"+html[id].bookname3+"</h6>"+
+						"<span>By "+html[id].name+"</span>"+
+						"<ul class=\"rating-stars\">"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+					    	"<li><i class=\"fa fa-star\"></i></li>"+
+						    "<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star-half-o\"></i></li>"+
+						"</ul>"+
+					"</div>"+
+				"</div>"+
+			"</div>"+
+
+			<!-- Product Box -->
+			"<div class=\"col-lg-3 col-xs-6 r-full-width masonry-grid most-recent\">"+
+				"<div class=\"recommended-book\">"+
+					"<div class=\"recommended-book-img\">"+
+						"<img src="+html[id].bookimg4+" alt=\"\">"+
+					"</div>"+
+					"<div class=\"recommended-book-detail\">"+
+						"<h6>"+html[id].bookname4+"</h6>"+
+						"<span>By "+html[id].name+"</span>"+
+						"<ul class=\"rating-stars\">"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star\"></i></li>"+
+					    	"<li><i class=\"fa fa-star\"></i></li>"+
+						    "<li><i class=\"fa fa-star\"></i></li>"+
+							"<li><i class=\"fa fa-star-half-o\"></i></li>"+
+						"</ul>"+
+					"</div>"+
+				"</div>"+
+			"</div>"
+		)
+	})
+</script>				
 </body>
 </html>

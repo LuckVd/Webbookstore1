@@ -27,3 +27,6 @@ def cart(request):
 
 def book_detail(request):
     return render(request,'book-detail.html')
+
+def author_detail(request):
+    return render(request,'author-detail.html')

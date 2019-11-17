@@ -18,10 +18,11 @@ urlpatterns = [
     path('temp_save/', temp.temp_save),
     path('temp_get/', temp.temp_get),
     url(r'^index/$', views.index),
-    url(r'^book-detail.html/$', views.book_detail),
+    url(r'^book-detail/$', views.book_detail),
     url(r'^shop/$', views.shop),
     url(r'^gallery/$', views.gallery),
     url(r'^author/$', views.author),
+    url(r'^author-detail/$', views.author_detail),
     url(r'^about/$', views.about),
     url(r'^cart/$', views.cart),
 

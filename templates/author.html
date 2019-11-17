@@ -1,4 +1,4 @@
-﻿ {% load staticfiles %}
+﻿{% load staticfiles %}
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}" >
 <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 <link rel="stylesheet" href="{% static 'css/transition.css'%}">
+
 <!-- Online Lib -->
 <link rel="stylesheet" href="{% static 'css/tether.min.css'%}">
 <script src="{% static 'js/tether.min.js'%}"></script>
@@ -27,14 +28,11 @@
 <link rel="stylesheet" id="skins" href="{% static 'css/default.css'%}" type="text/css" media="all">
 
 <!-- FontsOnline -->
-
 <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
 <!-- JavaScripts -->
 <script src="{% static 'js/modernizr.js'%}"></script>
 </head>
 <body>
-
-     
 
 
 
@@ -54,31 +52,21 @@
 <!-- Wrapper -->
 <div class="wrapper push-wrapper">
 
-	<!-- Header -->
+<!-- Header -->
 	<header id="header">
-		
+
 		<!-- Top Bar -->
 		<div class="topbar">
 			<div class="container">
-				
-				<!-- Online Option -->
-				<div class="online-option">
-					<ul>
-						<li><a href="#">online store</a></li>
-						<li><a href="#">Payment</a></li>
-						<li><a href="#">shipping</a></li>
-						<li><a href="#">Return</a></li>
-					</ul>
-				</div>
-				<!-- Online Option -->
+
 
 				<!-- Social Icons -->
 				<div class="social-icons pull-right">
 					<ul>
-						<li><a class="fa fa-facebook" href="#"></a></li>	
-						<li><a class="fa fa-twitter" href="#"></a></li>	
-						<li><a class="fa fa-google-plus" href="#"></a></li>	
-						<li><a class="fa fa-pinterest-p" href="#"></a></li>	
+						<li><a class="fa fa-qq" href="#"></a></li>
+						<li><a class="fa fa-wechat" href="#"></a></li>
+						<li><a class="fa fa-google-plus" href="#"></a></li>
+						<li><a class="fa fa-weibo" href="#"></a></li>
 					</ul>
 				</div>
 				<!-- Social Icons -->
@@ -86,8 +74,7 @@
 				<!-- Cart Option -->
 				<div class="cart-option">
 					<ul>
-						<li class="add-cart"><a href="#"><i class="fa fa-shopping-bag"></i><span>3</span></a></li>
-						<li><a href="#"><i class="fa fa-heart-o"></i>wish List 0 items</a></li>
+
 						<li><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i>Login / Register</a></li>
 					</ul>
 				</div>
@@ -104,7 +91,7 @@
 
 					<!-- Logo -->
 					<div class="logo">
-						<a href="index.html"><img src="images/logo-1.png" alt=""></a>
+						<a ><img src="images/logo-1.png" alt=""></a>
 					</div>
 					<!-- Logo -->
 
@@ -123,122 +110,31 @@
 					<!-- Navigation -->
 					<div class="navigation">
 						<ul>
-							<li class="active dropdown-icon">
-								<a href="#"><i class="fa fa-home"></i>Home</a>
-								<ul>
-									<li><a href="index.html">home 1</a></li>
-									<li><a href="index-2.html">home 2</a></li>
-								</ul>
+                            <li>
+								<a href="../index"><i class="fa fa-home"></i>Home</a>
+                            </li>
+							<li class="active">
+
+								<a href="../shop"><i class="fa fa-shopping-bag"></i>shop</a>
+
 							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-shopping-bag"></i>shop</a>
-								<ul>
-									<li><a href="shop.html">shop</a></li>
-									<li><a href="shop-detail.html">shop Detail</a></li>
-								</ul>
+
+
+                            <li >
+								<a href="../gallery"><i class="fa fa-book"></i>Gallery</a>
 							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-pencil"></i>blog</a>
-								<ul>
-									<li><a href="blog-all-views.html">blog all views</a></li>
-									<li><a href="blog-larg.html">blog Larg</a></li>
-									<li><a href="blog-list.html">blog List</a></li>
-									<li><a href="blog-grid.html">blog Grid</a></li>
-									<li><a href="blog-detail.html">blog detail</a></li>
-								</ul>	
+
+
+							<li >
+								<a href="../author"><i class="fa fa-file-text"></i>author</a>
+
 							</li>
-							<li class="dropdown-icon mega-dropdown-holder">
-								<a href="#"><i class="fa fa-book"></i>categories</a>
-								<ul>
-									<li>
-										<div class="mega-dropdown">
-											<div class="row">
-												<div class="col-sm-2">
-													<div class="categories-list">
-														<h6>Categories</h6>
-														<a href="#">Technology</a>
-														<a href="#">Fiction</a>
-														<a href="#">Health &amp; fitness</a>
-														<a href="#">History</a>
-														<a href="#">Mystery</a>
-														<a href="#">Politics &amp; current Affairs</a>
-													</div>
-												</div>
-												<div class="col-sm-2">
-													<div class="categories-list">
-														<h6>Eduacation</h6>
-														<a href="#">The Rosie Effect</a>
-														<a href="#">Accounting Coach</a>
-														<a href="#">Al-Islam</a>
-														<a href="#">American Literature</a>
-														<a href="#">Antique Books</a>
-														<a href="#">Baby School</a>
-													</div>
-												</div>
-												<div class="col-sm-2">
-													<div class="categories-list">
-														<h6>print top 10</h6>
-														<a href="#">My Brilliant Friend</a>
-														<a href="#">Everywhere I Look</a>
-														<a href="#">The Rosie Project</a>
-														<a href="#">The Trap</a>
-														<a href="#">The High Mountains of</a>
-														<a href="#">The Rosie Effect</a>
-													</div>
-												</div>
-												<div class="col-sm-6">
-													<div class="row">
-														<div class="col-sm-4">
-															<div class="s-product">
-																<div class="s-product-img">
-																	<img src="images/products-collection/img-01.jpg" alt="">
-																</div>
-																<span>James oliver</span>
-															</div>
-														</div>
-														<div class="col-sm-4">
-															<div class="s-product">
-																<div class="s-product-img">
-																	<img src="images/products-collection/img-02.jpg" alt="">
-																</div>
-																<span>James oliver</span>
-															</div>
-														</div>
-														<div class="col-sm-4">
-															<div class="s-product">
-																<div class="s-product-img">
-																	<img src="images/products-collection/img-03.jpg" alt="">
-																</div>
-																<span>James oliver</span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
+							<li>
+                                <a href="../about"><i class="fa fa-info-circle"></i>about</a>
+                            </li>
+                            <li >
+								<a href="../cart"><i class="fa fa-shopping-cart"></i>Cart</a>
 							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-files-o"></i>Pages</a>
-								<ul>
-									<li><a href="about.html">about</a></li>
-									<li><a href="gallery.html">gallery</a></li>
-									<li><a href="event-list.html">event list</a></li>
-									<li><a href="event-detail.html">event detail</a></li>
-									<li><a href="book-list.html">book list</a></li>
-									<li><a href="book-detail.html">book detail</a></li>
-									<li><a href="404.html">404</a></li>
-								</ul>
-							</li>
-							<li class="dropdown-icon">
-								<a href="#"><i class="fa fa-file-text"></i>author</a>
-								<ul>
-									<li><a href="author.html">author</a></li>
-									<li><a href="author-detail.html">author detail</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html"><i class="fa fa-fax"></i>contact</a></li>
 						</ul>
 					</div>
 					<!-- Navigation -->
@@ -248,18 +144,10 @@
 		</nav>
 		<!-- Nav -->
 
-		<!-- Inner Banner -->
-	  	<div class="parallax-window inner-banner tc-padding overlay-dark" data-parallax="scroll" data-image-src="images/inner-banner/img-01.jpg">
-	  		<div class="container">
-	  			<div class="inner-page-heading h-white">
-	  				<h2>Author Listing</h2>
-	  			</div>
-	  		</div>
-	  	</div>
-	  	<!-- Inner Banner -->
-
 	</header>
 	<!-- Header -->
+
+
 
 	<!-- breadcrumb -->
   	<div class="breadcrumb-holder white-bg">
@@ -284,243 +172,16 @@
 
 					<!-- Content -->
 					<div class="col-lg-9 col-md-8 col-xs-12">
-													
-						<!-- Author Filter -->
-						<div class="authors-filter">
-							<ul>
-								<li><a href="#">a</a></li>
-								<li><a href="#">b</a></li>
-								<li><a class="selected" href="#">c</a></li>
-								<li><a href="#">d</a></li>
-								<li><a href="#">e</a></li>
-								<li><a href="#">f</a></li>
-								<li><a href="#">g</a></li>
-								<li><a href="#">h</a></li>
-								<li><a href="#">k</a></li>
-								<li><a href="#">l</a></li>
-								<li><a href="#">m</a></li>
-								<li><a href="#">n</a></li>
-								<li><a href="#">o</a></li>
-								<li><a href="#">p</a></li>
-								<li><a href="#">q</a></li>
-								<li><a href="#">r</a></li>
-								<li><a href="#">s</a></li>
-								<li><a href="#">t</a></li>
-								<li><a href="#">u</a></li>
-								<li><a href="#">x</a></li>
-								<li><a href="#">y</a></li> 
-							</ul>
-						</div>
-						<!-- Author Filter -->
-
 						<!-- Author List -->
-						<ul class="author-list">
-							<li>
-								<div class="author-list-widget">
-									<div class="arthor-list-img">
-										<img src="images/arthor-list/img-01.jpg" alt="">
-										<div class="overlay">
-											<a class="position-center-center" href="#">+</a>
-										</div>
-									</div>
-									<div class="author-list-detail">
-										<h6>Muriel Barbery</h6>
-										<span>Born: 15 March 1975 UNITED KINGDOM</span>
-										<p>Muriel Barbery was born in Morocco in 1969. She is the author of two previous novels, Gourmet Rhapsody and The Elegance of the Hedgehog. which sold over six million copies.</p>
-										<a href="#" class="btn-1 sm">Read more<i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="author-list-widget">
-									<div class="arthor-list-img">
-										<img src="images/arthor-list/img-02.jpg" alt="">
-										<div class="overlay">
-											<a class="position-center-center" href="#">+</a>
-										</div>
-									</div>
-									<div class="author-list-detail">
-										<h6>Muriel Barbery</h6>
-										<span>Born: 15 March 1975 UNITED KINGDOM</span>
-										<p>Muriel Barbery was born in Morocco in 1969. She is the author of two previous novels, Gourmet Rhapsody and The Elegance of the Hedgehog. which sold over six million copies.</p>
-										<a href="#" class="btn-1 sm">Read more<i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="author-list-widget">
-									<div class="arthor-list-img">
-										<img src="images/arthor-list/img-03.jpg" alt="">
-										<div class="overlay">
-											<a class="position-center-center" href="#">+</a>
-										</div>
-									</div>
-									<div class="author-list-detail">
-										<h6>Muriel Barbery</h6>
-										<span>Born: 15 March 1975 UNITED KINGDOM</span>
-										<p>Muriel Barbery was born in Morocco in 1969. She is the author of two previous novels, Gourmet Rhapsody and The Elegance of the Hedgehog. which sold over six million copies.</p>
-										<a href="#" class="btn-1 sm">Read more<i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="author-list-widget">
-									<div class="arthor-list-img">
-										<img src="images/arthor-list/img-04.jpg" alt="">
-										<div class="overlay">
-											<a class="position-center-center" href="#">+</a>
-										</div>
-									</div>
-									<div class="author-list-detail">
-										<h6>Muriel Barbery</h6>
-										<span>Born: 15 March 1975 UNITED KINGDOM</span>
-										<p>Muriel Barbery was born in Morocco in 1969. She is the author of two previous novels, Gourmet Rhapsody and The Elegance of the Hedgehog. which sold over six million copies.</p>
-										<a href="#" class="btn-1 sm">Read more<i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
-							</li>
+						<ul class="author-list" id='author-list'>
 						</ul>
 						<!-- Author List -->
 
-						<!-- Pagination -->
-		           		<div class="pagination-holder">
-		           			<ul class="pagination">
-							    <li><a href="#" aria-label="Previous">Prev</a></li>
-							    <li><a href="#">1</a></li>
-							    <li class="active"><a href="#">2</a></li>
-							    <li><a href="#">3</a></li>
-							    <li><a href="#">4</a></li>
-							    <li><a href="#">5</a></li>
-							    <li><a href="#">6</a></li>
-							    <li><a href="#">7</a></li>
-							    <li><a href="#">...</a></li>
-							    <li><a href="#">23</a></li>
-							    <li><a href="#" aria-label="Next">Next</a></li>
-							</ul>
-		           		</div>
-		           		<!-- Pagination -->
 
 					</div>
 					<!-- Content -->
 
 					<!-- Aside -->
-					<aside class="col-lg-3 col-md-4 col-xs-12">
-
-						<!-- Aside Widget -->
-						<div class="aside-widget">
-							<h6>Author of the Week</h6>
-							<ul class="s-arthor-list">
-								<li>
-									<div class="s-arthor-wighet">
-										<div class="s-arthor-img">
-											<img src="images/s-arthor-list/img-01.jpg" alt="">
-											<div class="overlay">
-												<a class="position-center-center" href="#">+</a>
-											</div>
-										</div>
-										<div class="s-arthor-detail">
-											<h6>Jonathan Doe <a href="#">@jdoe</a></h6>
-											<a href="#">+ Follow on</a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="s-arthor-wighet">
-										<div class="s-arthor-img">
-											<img src="images/s-arthor-list/img-02.jpg" alt="">
-											<div class="overlay">
-												<a class="position-center-center" href="#">+</a>
-											</div>
-										</div>
-										<div class="s-arthor-detail">
-											<h6>Anelina Summer <a href="#">@asummer</a></h6>
-											<a href="#">+ Follow on</a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="s-arthor-wighet">
-										<div class="s-arthor-img">
-											<img src="images/s-arthor-list/img-03.jpg" alt="">
-											<div class="overlay">
-												<a class="position-center-center" href="#">+</a>
-											</div>
-										</div>
-										<div class="s-arthor-detail">
-											<h6>Sebastian Jeremy <a href="#">@sjermy</a></h6>
-											<a href="#">+ Follow on</a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="s-arthor-wighet">
-										<div class="s-arthor-img">
-											<img src="images/s-arthor-list/img-04.jpg" alt="">
-											<div class="overlay">
-												<a class="position-center-center" href="#">+</a>
-											</div>
-										</div>
-										<div class="s-arthor-detail">
-											<h6>Noah Jones <a href="#">@njones</a></h6>
-											<a href="#">+ Follow on</a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="s-arthor-wighet">
-										<div class="s-arthor-img">
-											<img src="images/s-arthor-list/img-05.jpg" alt="">
-											<div class="overlay">
-												<a class="position-center-center" href="#">+</a>
-											</div>
-										</div>
-										<div class="s-arthor-detail">
-											<h6>Tommy Adam <a href="#">@tadam</a></h6>
-											<a href="#">+ Follow on</a>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<!-- Aside Widget -->
-
-						<!-- Aside Widget -->
-						<div class="aside-widget">
-							<h6>Books of the Year</h6>
-							<ul class="books-year-list">
-								<li>
-									<div class="books-post-widget">
-										<img src="images/books-year-list/img-01.jpg" alt="">
-										<h6><a href="#">My Brilliant Friend The Neapolitan Novels, Book One</a></h6>
-										<span>By Elena Ferrante</span>
-									</div>
-								</li>
-								<li>
-									<div class="books-post-widget">
-										<img src="images/books-year-list/img-02.jpg" alt="">
-										<h6><a href="#">As night fell, something stirred the darkness.</a></h6>
-										<span>By Meg Caddy</span>
-									</div>
-								</li>
-								<li>
-									<div class="books-post-widget">
-										<img src="images/books-year-list/img-03.jpg" alt="">
-										<h6><a href="#">The Rosie Project: Don Tillman 1</a></h6>
-										<span>By Graeme Simsion</span>
-									</div>
-								</li>
-								<li>
-									<div class="books-post-widget">
-										<img src="images/books-year-list/img-04.jpg" alt="">
-										<h6><a href="#">Heartbreaking, joyous, traumatic, intimate and</a></h6>
-										<span>By Magda Szubanski</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<!-- Aside Widget -->
-
-					</aside>
 					<!-- Aside -->
 
 				</div>
@@ -719,8 +380,8 @@
   	</div>
 </div>
 <!-- View Pages -->
-
 <!-- Login Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
 <div class="modal fade login-modal" id="login-modal" role="dialog">
 	<div class="position-center-center" role="document">
 		<div class="modal-content">
@@ -728,18 +389,13 @@
 			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<div class="social-options">
 				<ul>
-					<li><a class="facebook" href="#"><i class="fa fa-facebook"></i>Register with facebook</a></li>
-					<li><a class="twitter" href="#"><i class="fa fa-twitter"></i>Register with twitter</a></li>
-					<li><a class="google" href="#"><i class="fa fa-google-plus"></i>Register with gmail+</a></li>
+					<li><a class="google" href="#" data-toggle="modal" data-target="#register-modal"><i class="fa fa-registered"></i>使用用户名注册</a></li>
 				</ul>
 			</div>
-			<form class="sending-form">
+			<div class="sending-form">
+
 				<div class="form-group">
-					<input class="form-control" required="required" placeholder="Full name">
-					<i class="fa fa-user"></i>
-				</div>
-				<div class="form-group">
-					<input class="form-control" required="required" placeholder="Email Address">
+					<input class="form-control" required="required" placeholder="UserName">
 					<i class="fa fa-user"></i>
 				</div>
 				<div class="form-group">
@@ -747,12 +403,66 @@
 					<i class="fa fa-user"></i>
 				</div>
 				<p class="terms">You agree to the hldy.hr <a href="#">Terms &amp; Conditions</a></p>
-				<button class="btn-1 shadow-0 full-width">Register account</button>
-			</form>
+				<button id="btn_login" class="btn-1 shadow-0 full-width">登陆</button>
+			</div>
 		</div>
 	</div>
 </div>
 <!-- Login Modal -->
+
+
+
+
+<!-- Register Modal -->
+<div class="modal fade login-modal" id="register-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>Register</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+			<div class="sending-form" >
+				<div class="form-group">
+					<input class="form-control" required="required" placeholder="Username" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" required="required"  placeholder="Email" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type=
+                            "password" required="required"  placeholder="Password">
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password"  required="required"  placeholder="PasswordAgain">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="terms">注册前请阅读 <a href="#">用户须知</a></p>
+				<button id="btn_register"   class="btn-1 shadow-0 full-width" >Register account</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Register Modal -->
+
+<!-- Quit Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
+<div class="modal fade login-modal" id="quit-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>用户信息</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				<p class="terms">用户名:&#12288;<span id="user_name">user</span></p>
+				<p class="terms">邮&#12288;箱:&#12288;<span id="user_email">user@Qq.com</span></p>
+				<p class="terms">权&#12288;限&#12288;<span id="is_admin">普通用户</span></p>
+				<button id="quit_login" class="btn-1 shadow-0 full-width">退出登陆</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Quit Modal -->
 
 <!-- Quick View -->
 <div class="modal fade quick-view" id="quick-view" role="dialog">
@@ -816,9 +526,7 @@
 <!-- Quick View -->
 
 <!-- Java Script -->
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/jquery-ui.js' %}"></script>
-<script src="{% static 'js/jquery.cookie.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/gmap3.min.js' %}"></script>
 <script src="{% static 'js/datepicker.js' %}"></script>
@@ -826,12 +534,12 @@
 <script src="{% static 'js/bigslide.js' %}"></script>
 <script src="{% static 'js/3d-book-showcase.js' %}"></script>
 <script src="{% static 'js/turn.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
 <script src="{% static 'js/mcustom-scrollbar.js' %}"></script>
 <script src="{% static 'js/timeliner.js' %}"></script>
 <script src="{% static 'js/parallax.js' %}"></script>
 <script src="{% static 'js/countdown.js' %}"></script>
 <script src="{% static 'js/countTo.js' %}"></script>
-<script src="{% static 'js/owl-carousel.js' %}"></script>
 <script src="{% static 'js/bxslider.js' %}"></script>
 <script src="{% static 'js/appear.js' %}"></script>
 <script src="{% static 'js/sticky.js' %}"></script>
@@ -840,12 +548,121 @@
 <script src="{% static 'js/wow-min.js' %}"></script>
 <script src="{% static 'js/classie.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/bestsellurl.js' %}"></script>
+<script src="{% static 'js/LoginRegister.js' %}"></script>
 
 <!-- Switcher JS -->
 <script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/colorswitcher.js' %}"></script>
-<!-- Switcher JS -->
-				
+<script>
+		var list = [
+			{
+
+				img: 'images/arthor-list/img-01.jpg',
+				name: '冰心',
+				born: 'Born: 1900年10月5日－1999年2月28日 生于福建省',
+				intro:'女，原名谢婉莹，福建省长乐市（今福州市长乐区）人 ，中国民主促进会（民进）成员。 中国诗人，现代作家、翻译家、儿童文学作家、社会活动家、散文家。笔名冰心取自“一片冰心在玉壶”。',
+				id: 1,
+			},
+			{	
+				id: 2,
+				img:'images/arthor-list/img-02.jpg',
+				name: '钱钟书',
+				born: 'Born: 1910年10月20日—1998年12月19日 生于江苏省',
+				intro:'男，江苏无锡人，原名仰先，字哲良，后改名钟书，字默存，号槐聚，曾用笔名中书君，中国现代作家、文学研究家，与饶宗颐并称为“南饶北钱”。',
+			},
+			{	
+				id: 3,
+				img:'images/arthor-list/img-03.jpg',
+				name: '巴金',
+				born: 'Born: 1904年11月25日—2005年10月17日 生于四川省',
+				intro:'汉族，四川成都人，祖籍浙江嘉兴。巴金原名李尧棠，另有笔名佩竿、极乐、黑浪、春风等，字芾甘，中国作家、翻译家、社会活动家、无党派爱国民主人士。巴金1904年11月生在四川成都一个封建官僚家庭里，五四运动后，巴金深受新潮思想的影响，并在这种思想的影响下开始了他个人的反封建斗争。1923年巴金离家赴上海、南京等地求学，从此开始了他长达半个世纪的文学创作生涯。',
+			},
+			{	
+				id: 4,
+				img:'images/arthor-list/img-04.jpg',
+				name: '三毛',
+				born: 'Born: 1943年3月26日－1991年1月4日 生于重庆市',
+				intro:'女，曾用名陈懋（mào）平，后改名为陈平，浙江定海（今舟山市定海区）人。1943年Born于重庆黄桷垭。中国现代作家。',
+			},
+			{
+				id: 5,
+				img: 'images/arthor-list/img-05.jpg',
+				name: '张爱玲',
+				born: 'Born: 1920年9月30日—1995年9月1日左右 生于上海市',
+				intro:'女，原名张煐，笔名梁京，祖籍河北丰润，生于上海，中国现代女作家。7岁开始写小说，12岁开始在校刊和杂志上发表作品。',
+			},
+			{	
+				id: 6,
+				img:'images/arthor-list/img-06.jpg',
+				name: '茅盾',
+				born: 'Born: 1896年7月4日—1981年3月27日 生于浙江省',
+				intro:'男，原名沈德鸿，笔名茅盾、郎损、玄珠、方璧、止敬、蒲牢、微明、沈仲方、沈明甫等，字雁冰，浙江省嘉兴市桐乡市人。中国现代著名作家、文学评论家、文化活动家以及社会活动家。',
+			},
+			{	
+				id: 7,
+				img:'images/arthor-list/img-07.jpg',
+				name: '余秋雨',
+				born: 'Born: 1946年8月23日 生于浙江省',
+				intro:'Born于浙江省余姚县，中国著名当代文化学者，理论家、文化史学家、作家、散文家。',
+			},
+			{	
+				id: 8,
+				img:'images/arthor-list/img-08.jpg',
+				name: '莫言',
+				born: 'Born: 1955年2月17日 生于山东省',
+				intro:'男，原名管谟业，Born于山东省高密市东北乡文化发展区大栏平安村，中国作家协会副主席、2012年诺贝尔文学奖获得者，亦是第一个获得诺贝尔文学奖的中国籍作家。',
+			},
+			{
+				id: 9,
+				img: 'images/arthor-list/img-09.jpg',
+				name: '韩寒',
+				born: 'Born: 1982年9月23日 生于上海市',
+				intro:'男，Born于上海市金山区亭林镇，中国作家、导演、职业赛车手',
+				detail:''
+			},
+			{	
+				id:10,
+				img:'images/arthor-list/img-10.jpg',
+				name: '郭敬明',
+				born: 'Born: 1983年6月6日 生于四川省',
+				intro:'男，中国作家、上海最世文化发展有限公司董事长、《最小说》等杂志主编。高中时期以“第四维”为笔名在网站榕树下发表文章。',
+			},
+			{	
+				id: 11,
+				img:'images/arthor-list/img-11.jpg',
+				name: '鲁迅',
+				born: 'Born: 1881年9月25日－1936年10月19日 生于浙江省',
+				intro:'男，曾用名周樟寿，后改名周树人，曾字豫山，后改豫才，曾留学日本仙台医科专门学校（肄业）。“鲁迅”是他1918年发表《狂人日记》时所用的笔名，也是他影响最为广泛的笔名，浙江绍兴人。著名文学家、思想家、民主战士，五四新文化运动的重要参与者，中国现代文学的奠基人。毛泽东曾评价：“鲁迅的方向，就是中华民族新文化的方向。”',
+			},
+			{	
+				id: 12,
+				img:'images/arthor-list/img-12.jpg',
+				name: '丁玲',
+				born: 'Born: 1904年10月12日-1986年3月4日 生于湖南省',
+				intro:'女，原名蒋伟，字冰之，又名蒋炜、蒋玮、丁冰之，笔名彬芷、从喧等，湖南临澧人，毕业于上海大学中国文学系，中共党员，著名作家、社会活动家。1936年11月，丁玲到达陕北保安，是第一个到延安的文人。丁玲的到来，给陕甘宁抗日根据地原本力量薄弱的文艺运动增添了新鲜的血液。她在中国现代文学史上作出过无法取代的贡献。',
+			},
+		]
+		jQuery( document ).ready(function() {
+			for(var i = 0; i < list.length; i++){
+				$("#author-list").append(" <li>"+
+							"<div class=\"author-list-widget\">"+
+							"<div class=\"arthor-list-img\">"+
+								"<img src="+list[i].img+"  +alt=\"\">"+
+								"<div class=\"overlay\">"+
+									"<a class=\"position-center-center\" href=\"#\">+</a>"+
+								"</div>"+
+							"</div>"+
+						"	<div class=\"author-list-detail\">"+
+								"<h5> "+list[i].name+"</h5>"+
+								"<span>"+list[i].born+"</span>"+
+								"<p>"+list[i].intro+"</p>"+
+								"<a href=\"../author-detail?id="+list[i].id+" \" class=\"btn-1 sm\">Read more<i class=\"fa fa-arrow-circle-right\"></i></a></div>"+
+						"</div>"+
+					"</li>"
+            );
+			}
+			
+		})
+	</script>				
 </body>
 </html>
