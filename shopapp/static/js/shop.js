@@ -34,33 +34,33 @@ jQuery( document ).ready(function() {
     });
     //这上面的代码都是为了解决跨域问题，如果不用的话会引起跨域访问错误
 
-
-    //获得所有作者的信息，根据个数动态添加到左边栏目
-    $.ajax({
-        type: 'post',
-        url: '/search/',
-         data: {table: 'author'},
-        dataType: "JSON",
-        success: function (data) {
-            var author_len = data.author_name.length;
-            for(var i=0;i<author_len;i++) {
-             $('#Author').append('<li><a a href="#">' + data.author_name[i] + '</a></li> ');
-          }
-
-        },
-        error: function () {
-            console.log("failed");
-        }
-    });
-
+    //
+    // //获得所有作者的信息，根据个数动态添加到左边栏目
+    // $.ajax({
+    //     type: 'post',
+    //     url: '/search/',
+    //      data: {table: 'author'},
+    //     dataType: "JSON",
+    //     success: function (data) {
+    //         var author_len = data.author_name.length;
+    //         for(var i=0;i<author_len;i++) {
+    //          $('#Author').append('<li><a a href="#">' + data.author_name[i] + '</a></li> ');
+    //       }
+    //
+    //     },
+    //     error: function () {
+    //         console.log("failed");
+    //     }
+    // });
+    var maxlen=10;
     function display_bolist(data,i) {
         $("#book_list").find("div.product-box").each(function(){
                 if(typeof(data.book_image[i])=="undefined"){$(this).hide()}
                 else{
                     $(this).show();
                 $(this).find("img").attr("src",data.book_image[i]);
-                $(this).find("h5").find("a").text(data.book_name[i])
-                $(this).find("div.product-detail").find("p").text(data.book_describe[i]);
+                $(this).find("h5").find("a").text(data.book_name[i].substring(0,maxlen) + "...")
+                $(this).find("div.product-detail").find("p").text(data.book_describe[i].substring(0,maxlen) + "...");
                 $(this).find("strong").text(data.book_price[i]);
                 $(this).attr("id",data.id[i]);
                // $(this).find("h5").find("a").attr("href",("../book-detail.html?"+data.id[i]));
@@ -135,7 +135,7 @@ jQuery( document ).ready(function() {
         var json_data={"data_method":"book_id","curr_id": book_id};
         send_temp(json_data);
        //跳转到详情页面
-       window.location.href = "../book-detail.html";
+       window.location.href = "../book-detail";
 
     })
 

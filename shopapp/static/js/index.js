@@ -31,7 +31,7 @@ jQuery( document ).ready(function() {
         }
     });
     //这上面的代码都是为了解决跨域问题，如果不用的话会引起跨域访问错误
-
+    var maxlen =20;
     $.ajax({
         type: 'post',
         url: '/search/',
@@ -39,24 +39,25 @@ jQuery( document ).ready(function() {
         data: {table: 'book'},
         success: function (data) {
             var num_of_books = 0
+            console.log(typeof (data.book_name[num_of_books]));
             $("#tab-1").find("div.owl-item ").each(function () {
                 $(this).find("img").attr("src", data.book_image[num_of_books]);
-                $(this).find("h5").find("a").text(data.book_name[num_of_books]);
-                $(this).find("div.product-detail").find("p").text(data.book_describe[num_of_books]);
+                $(this).find("h5").find("a").text(data.book_name[num_of_books].substring(0,maxlen) + "...");
+                $(this).find("div.product-detail").find("p").text(data.book_describe[num_of_books].substring(0,maxlen) + "...");
                 $(this).find("strong").text(data.book_price[num_of_books]);
                 num_of_books++;
             })
                 num_of_books=5;
               $("#release-thumb").find("a").each(function () {
                   $(this).find("img.book_image").attr("src",data.book_image[num_of_books]);
-                  $(this).find("span.book_name").text(data.book_name[num_of_books]);
+                  $(this).find("span.book_name").text(data.book_name[num_of_books].substring(0,5));
                   num_of_books++;
               });
                 num_of_books=5;
               $("div.upcoming-slider").find("div.item").each(function () {
                   $(this).find("img.book_image").attr("src",data.book_image[num_of_books]);
-                  $(this).find("a.book_name").text(data.book_name[num_of_books]);
-                  $(this).find("p.book_describe").text(data.book_describe[num_of_books]);
+                  $(this).find("a.book_name").text(data.book_name[num_of_books].substring(0,maxlen)+ "...");
+                  $(this).find("p.book_describe").text(data.book_describe[num_of_books].substring(0,maxlen)+ "...");
                   $(this).find("span.book_price").text(data.book_price[num_of_books]);
                   num_of_books++;
               });
@@ -64,9 +65,9 @@ jQuery( document ).ready(function() {
              var length = data.book_name.length-1;
              $("#book_list").find("div.s-product").each(function () {
                  $(this).find("img").attr("src",data.book_image[length]);
-                 $(this).find("p.book_describe").text(data.book_describe[length]);
-                 $(this).find("a.book_name").text(data.book_name[length]);
-                 $(this).find("span.book_author").text(data.book_author[length]);
+                 $(this).find("p.book_describe").text(data.book_describe[length].substring(0,maxlen)+ "...");
+                 $(this).find("a.book_name").text(data.book_name[length].substring(0,maxlen)+ "...");
+                 $(this).find("span.book_author").text(data.book_author[length].substring(0,maxlen));
                  length--;
             })
 

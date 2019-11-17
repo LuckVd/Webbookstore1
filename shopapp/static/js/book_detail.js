@@ -41,7 +41,7 @@ jQuery( document ).ready(function() {
         url: '/temp_get/',
          data: {"data_method":"book_id"},
         success: function (data) {
-            curr_id=data.replace(/[^0-9]/ig,"")
+            curr_id=data.replace(/[^0-9]/ig,"")-1;
            $("#book_detail").find("#book_stock").text(booklist.book_stock[curr_id]);
            $("#book_detail").find("#book_name").text(booklist.book_name[curr_id]);
            $("#tab-2").find("#book_author").text(booklist.book_author[curr_id]);

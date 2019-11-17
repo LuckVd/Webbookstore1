@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from shopapp import models
-from django.http import HttpResponse
+from django.http import HttpResponse , JsonResponse
 import json
 from django.core import serializers
 
@@ -84,13 +84,15 @@ def search(request):
                 res = serializers.serialize("json", models.user.objects.filter(id=data))
             else:
                 res = serializers.serialize("json", models.user.objects.all())
-            print(res)
+                print(res)
         if tablename == "book":
             if(request.POST.get("type") == "id"):
                 data = request.POST.get("data")
                 res = serializers.serialize("json", models.book.objects.filter(id=data))
             else:
-                res = serializers.serialize("json", models.book.objects.all())
+              #  res = serializers.serialize("json", models.book.objects.all())
+                res=book_to_json( models.book.objects.all())
+                print(res)
         if tablename == "author":
             if(request.POST.get("type") == "name"):
                 data = request.POST.get("data")
@@ -106,6 +108,39 @@ def search(request):
             res = serializers.serialize("json", models.addressee.objects.all())
         if tablename == "orderbook":
             res = serializers.serialize("json", models.orderbook.objects.all())
-        return HttpResponse(res)
+        return JsonResponse(res,safe=False)
     else:
         return HttpResponse("0")
+
+def book_to_json(book_table):
+    list_book_id = []
+    list_book_name = []
+    list_book_author = []
+    list_book_discribe = []
+    list_book_price = []
+    list_book_sales = []
+    list_book_stock = []
+    list_book_detail = []
+    list_book_image = []
+    for book in book_table:
+        list_book_id.append(book.id)
+        list_book_name.append(book.book_name)
+        list_book_author.append(book.book_author)
+        list_book_discribe.append(book.book_discribe)
+        list_book_price.append(book.book_price)
+        list_book_sales.append(book.book_sales)
+        list_book_stock.append(book.book_stock)
+        list_book_detail.append(book.book_detail)
+        list_book_image.append(book.book_image)
+    data = {'id': list_book_id,
+            'book_name':list_book_name,
+            'book_author':list_book_author,
+            'book_describe':list_book_discribe,
+            'book_price':list_book_price,
+            'book_sales':list_book_sales,
+            'book_stock':list_book_stock,
+            'book_detail':list_book_detail,
+            'book_image':list_book_image}
+    return data
+
+

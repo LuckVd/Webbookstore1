@@ -14,7 +14,7 @@ urlpatterns = [
 
     path('cart/cart_show', cart.cart_show),
     #path('add/', add.add),
-    path('search/', search.search),
+   # path('search/', search.search),
     path('temp_save/', temp.temp_save),
     path('temp_get/', temp.temp_get),
     url(r'^index/$', views.index),
