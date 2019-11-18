@@ -65,7 +65,7 @@ jQuery( document ).ready(function() {
     }
         data.book_name=$(this).closest(".sending-form").find("input[placeholder='书名']").val();
         data.book_author=$(this).closest(".sending-form").find("input[placeholder='作者名']").val();
-        data.book_discribe=$(this).closest(".sending-form").find("textarea[placeholder='书籍简介']").val();
+        data.book_describe=$(this).closest(".sending-form").find("textarea[placeholder='书籍简介']").val();
         data.book_price=$(this).closest(".sending-form").find("input[placeholder='价格']").val();
         data.book_sales=$(this).closest(".sending-form").find("input[placeholder='销量']").val();
         data.book_stock=$(this).closest(".sending-form").find("input[placeholder='剩余库存']").val();

@@ -53,7 +53,7 @@ jQuery( document ).ready(function() {
             var num_of_books=0
            $("#rebook").find("input[placeholder='书名']").val(data.book_name[num_of_books])
         $("#rebook").find("input[placeholder='作者名']").val(data.book_author[num_of_books]);
-     $("#rebook").find("textarea[placeholder='书籍简介']").text(data.book_discribe[num_of_books]);
+     $("#rebook").find("textarea[placeholder='书籍简介']").text(data.book_describe[num_of_books]);
        $("#rebook").find("input[placeholder='价格']").val(data.book_price[num_of_books]);
         $("#rebook").find("input[placeholder='销量']").val(data.book_sales[num_of_books]);
      $("#rebook").find("input[placeholder='剩余库存']").val(data.book_stock[num_of_books]);
@@ -64,7 +64,7 @@ jQuery( document ).ready(function() {
          //redata.id=  bookid;
         redata.book_name=$(this).closest(".sending-form").find("input[placeholder='书名']").val();
         redata.book_author=$(this).closest(".sending-form").find("input[placeholder='作者名']").val();
-        redata.book_discribe=$(this).closest(".sending-form").find("textarea[placeholder='书籍简介']").val();
+        redata.book_describe=$(this).closest(".sending-form").find("textarea[placeholder='书籍简介']").val();
         redata.book_price=$(this).closest(".sending-form").find("input[placeholder='价格']").val();
         redata.book_sales=$(this).closest(".sending-form").find("input[placeholder='销量']").val();
         redata.book_stock=$(this).closest(".sending-form").find("input[placeholder='剩余库存']").val();

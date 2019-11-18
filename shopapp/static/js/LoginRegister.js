@@ -178,6 +178,7 @@ jQuery( document ).ready(function() {
 
     $("#quit_login").click(function () {
         sessionStorage.removeItem("user_id");
+        window.location.href = "../index";
         //var json_data = {"data_method": "user_id", "user_id": -2};
        //  send_temp(json_data);
         $("a[data-target='#quit-modal']").attr("data-target", "#login-modal");

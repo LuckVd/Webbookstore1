@@ -57,7 +57,7 @@ jQuery( document ).ready(function() {
     $("#authoradd").click(function () {
         data = new Object();
         data.author_name=$(this).closest(".sending-form").find("input[placeholder='作者名']").val();
-        data.author_discribe=$(this).closest(".sending-form").find("textarea[placeholder='作者简介']").val();
+        data.author_describe=$(this).closest(".sending-form").find("textarea[placeholder='作者简介']").val();
         data=JSON.stringify(data);
         bookadd(data);
     })
