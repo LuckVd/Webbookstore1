@@ -52,3 +52,6 @@ def author_revise(request):
 
 def user_fd(request):
     return render(request,'user-fd.html')
+
+def about(request):
+    return render(request,'about.html')

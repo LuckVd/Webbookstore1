@@ -1,4 +1,4 @@
-﻿
+﻿ {% load staticfiles %}
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -9,30 +9,29 @@
 <title>Bookstore HTML5 Template</title>
 
 <!-- StyleSheets -->
-<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/icomoon.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/color-1.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/transition.css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/color-1.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/transition.css'%}">
 
 <!-- Online Lib -->
-<link rel="stylesheet" href="css/tether.min.css">
-<script src="js/tether.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/tether.min.css'%}">
+<script src="{% static 'js/tether.min.js'%}"></script>
 
 <!-- Switcher CSS -->
-<link href="switcher/switcher.css" rel="stylesheet" type="text/css"/> 
-<link rel="stylesheet" id="skins" href="css/default.css" type="text/css" media="all">
+<link href="{% static 'css/switcher.css'%}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" id="skins" href="{% static 'css/default.css'%}" type="text/css" media="all">
 
 <!-- FontsOnline -->
-<link href='https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400italic,400,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900italic,900,100italic,100' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
 
 <!-- JavaScripts -->
-<script src="js/vendor/modernizr.js"></script>
+<script src="{% static 'js/modernizr.js'%}"></script>
 </head>
 <body>
 
@@ -169,7 +168,7 @@
 				<!-- Main Heading -->
 	    		<div class="main-heading-holder">
 	    			<div class="main-heading style-1">
-	    				<h2>Help us Improve <span class="theme-color">our Service</span></h2>
+	    				<h2>小组<span class="theme-color">成员</span></h2>
 	    			</div>
 	    		</div>
 	    		<!-- Main Heading -->
@@ -177,46 +176,65 @@
 		    	<!-- Services -->
 		    	<div class="our-service tc-padding-bottom">
 			    	<div class="row">
-			    		
-			    		<!-- Service Column -->
-		    			<div class="col-lg-3 col-xs-6 r-full-width">
-				            <div class="service-column style-2">
-				            	<span class="service-icon"><i class="icon-amazing"></i></span>
-				              	<h4><a href="#">Amazing Design Quality</a></h4>
-				              	<p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books</p>
-				            </div>
+
+
+                         <!-- Service Column -->
+			            <div class="col-lg-1 col-xs-6 r-full-width">
+
 				        </div>
 				        <!-- Service Column -->
-
 				        <!-- Service Column -->
-			            <div class="col-lg-3 col-xs-6 r-full-width">
+			            <div class="col-lg-2 col-xs-6 r-full-width">
 				            <div class="service-column style-2">
 				            	<span class="service-icon"><i class="icon-intuitive-design"></i></span>
-				              	<h4><a href="#">Intuitive Design</a></h4>
-				              	<p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books</p>
+				              	<h4><a href="#">雷鹰</a></h4>
+				              	<p>负责后台程序编写，前端和后台传递信息格式的规范，映射文件编写。</p>
 				            </div>
 				        </div>
 				        <!-- Service Column -->
 
-			        	<!-- Service Column -->
-				        <div class="col-lg-3 col-xs-6 r-full-width">
-				            <div class="service-column style-2">
-				            	<span class="service-icon"><i class="icon-responsive"></i></span>
-				              	<h4><a href="#">Responsive</a></h4>
-				              	<p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books</p>
-				            </div>
-				        </div>
-				        <!-- Service Column -->
+
 
 			        	<!-- Service Column -->
-				        <div class="col-lg-3 col-xs-6 r-full-width">
+				        <div class="col-lg-2 col-xs-6 r-full-width">
 				            <div class="service-column style-2">
 				            	<span class="service-icon"><i class="icon-seo-optimized"></i></span>
-				              	<h4><a href="#">SEO Optimized</a></h4>
-				              	<p>Large online bookstores offer used books for sale, too. Individuals wishing to sell their used books</p>
+				              	<h4><a href="#">帅彬</a></h4>
+				              	<p>负责相关书籍数据的收集，数据库的建立，以及涉及到数据库的相关操作。</p>
 				            </div>
 				        </div>
 				        <!-- Service Column -->
+
+                        <!-- Service Column -->
+				        <div class="col-lg-2 col-xs-6 r-full-width">
+				            <div class="service-column style-2">
+				            	<span class="service-icon"><i class="icon-responsive"></i></span>
+				              	<h4><a href="#">夏霜</a></h4>
+				              	<p>负责前端界面中作者页，作者详情页，商品详情页的开发，以及涉及到这些页面的基本JS逻辑代码编写。</p>
+				            </div>
+				        </div>
+				        <!-- Service Column -->
+
+                        <!-- Service Column -->
+				        <div class="col-lg-2 col-xs-6 r-full-width">
+				            <div class="service-column style-2">
+				            	<span class="service-icon"><i class="icon-responsive"></i></span>
+				              	<h4><a href="#">张恒</a></h4>
+				              	<p>负责前端界面中后台处理的开发，以及涉及到这些页面的基本JS逻辑代码编写。</p>
+				            </div>
+				        </div>
+				        <!-- Service Column -->
+
+                        <!-- Service Column -->
+				        <div class="col-lg-2 col-xs-6 r-full-width">
+				            <div class="service-column style-2">
+				            	<span class="service-icon"><i class="icon-responsive"></i></span>
+				              	<h4><a href="#">范佳文</a></h4>
+				              	<p>负责前端界面中主页，商品页，涉及到这些页面的基本JS逻辑代码编写。以及登陆注册盒购物车功能的实现</p>
+				            </div>
+				        </div>
+				        <!-- Service Column -->
+
 
 			    	</div>
 		    	</div>
@@ -229,11 +247,10 @@
 		    			<!-- Mission Disc -->
 		    			<div class="col-lg-6 col-xs-12">
 		    				<div class="mission-disc">
-		    					<h4>Mission <span>&amp; values</span></h4>
-		    					<strong>Text Publishing is an independent, Melbourne-based publisher of literary fiction and non-fiction. Text won the Australian Book Industry Awards (ABIA) Small Publisher of the Year in 2012, 2013 and 2014.</strong>
-		    					<p>At Text we want to publish books that make a difference to people’s lives. We believe that reading should be a marvellous experience, that every book you read should somehow change your life if only by a fraction. We love the phrase ‘lost in a book’.</p>
-		    					<p> lost in books every day—on the tram, on the beach, in bed. Reading is what keeps the imagination supple and challenges preconceptions and prejudices.</p>
-		    					<a href="#" class="btn-1 shadow-0">Read more<i aria-hidden="true" class="fa fa-arrow-circle-right"></i></a>
+		    					<h4>项目 <span>工作</span></h4>
+		    					<p> 本项目意图搭建一个在线书城，用到了一个商城前端模板，使用Django + JQuery + bootstrap + Mysql架构实现，主要的功能有登陆注册、展示相关书籍、添加书籍到购物车，购物车内商品的
+                                增添修改，展示知名作家生平，并且可以在登录界面直接通过管理员账户密码登录到后台管理界面，在后台管理界面实现对书籍的增添查改，对用户的删除处理。
+                                本系统大部分数据都通过Ajax与后台交互，存入Mysql数据库。部分临时数据存在session中，前台的相关操作都又对应的js文件实现。</p>
 		    				</div>
 		    			</div>
 		    			<!-- Mission Disc -->
@@ -241,7 +258,7 @@
 		    			<!-- Laptop Img -->
 		    			<div class="col-sm-6">
 		    				<div class="laptop-img">
-		    					<img class="floating" src="images/laptop.png" alt="">
+		    					<img class="floating" src="images/labtop1.png" alt="" width="570" height="327">
 		    				</div>
 		    			</div>
 		    			<!-- Laptop Img -->
@@ -298,380 +315,10 @@
 		</section>
 		<!-- Statistic -->
 
-		<!-- Team -->
-		<section class="tc-padding white-bg">
-			<div class="container">
-				
-				<!-- Main Heading -->
-	    		<div class="main-heading-holder">
-	    			<div class="main-heading style-2">
-	    				<h2>Our <span class="theme-color">Creative Team</span></h2>
-	    				<p>We are committed to providing first-class services to the writers who trust us</p>
-	    			</div>
-	    		</div>
-	    		<!-- Main Heading -->	
-
-				<!-- Team Slider -->
-				<div class="team-slider">
-					
-					<!-- Team Colmun -->
-					<div class="item">
-						<div class="team-column">
-							<div class="team-img">
-								<img src="images/team/img-01.jpg" alt="">
-								<div class="overlay-padding">
-									<div class="overlay">
-										<ul class="position-center-center">
-											<li>Tel: 12 0123 4567</li>
-											<li>Mob 12 0123 4567</li>
-											<li>Email: ch.jackson@live.com</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="team-detail">
-								<h5>Jhon Doe</h5>
-								<span>Art Director CEO</span>
-							</div>
-							<div class="team-btm">
-								<ul class="social-icons"> 
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- Team Colmun -->
-
-					<!-- Team Colmun -->
-					<div class="item">
-						<div class="team-column">
-							<div class="team-img">
-								<img src="images/team/img-02.jpg" alt="">
-								<div class="overlay-padding">
-									<div class="overlay">
-										<ul class="position-center-center">
-											<li>Tel: 12 0123 4567</li>
-											<li>Mob 12 0123 4567</li>
-											<li>Email: ch.jackson@live.com</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="team-detail">
-								<h5>Elizabeth Mitchell</h5>
-								<span>Graphic Designer</span>
-							</div>
-							<div class="team-btm">
-								<ul class="social-icons"> 
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- Team Colmun -->
-
-					<!-- Team Colmun -->
-					<div class="item">
-						<div class="team-column">
-							<div class="team-img">
-								<img src="images/team/img-03.jpg" alt="">
-								<div class="overlay-padding">
-									<div class="overlay">
-										<ul class="position-center-center">
-											<li>Tel: 12 0123 4567</li>
-											<li>Mob 12 0123 4567</li>
-											<li>Email: ch.jackson@live.com</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="team-detail">
-								<h5>Barrett Wilson</h5>
-								<span>Book Writter</span>
-							</div>
-							<div class="team-btm">
-								<ul class="social-icons"> 
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- Team Colmun -->
-
-					<!-- Team Colmun -->
-					<div class="item">
-						<div class="team-column">
-							<div class="team-img">
-								<img src="images/team/img-04.jpg" alt="">
-								<div class="overlay-padding">
-									<div class="overlay">
-										<ul class="position-center-center">
-											<li>Tel: 12 0123 4567</li>
-											<li>Mob 12 0123 4567</li>
-											<li>Email: ch.jackson@live.com</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="team-detail">
-								<h5>Josh Martin</h5>
-								<span>Josh Martin</span>
-							</div>
-							<div class="team-btm">
-								<ul class="social-icons"> 
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- Team Colmun -->
-
-				</div>
-				<!-- Team Slider -->
-
-			</div>
-		</section>
-		<!-- Team -->
-
-		<!-- Partners -->
-	    <section class="partners tc-padding-bottom">
-	      	<div class="container">
-
-	      		<!-- Main Heading -->
-	    		<div class="main-heading-holder">
-	    			<div class="main-heading style-2">
-	    				<h2>Our <span class="theme-color">Creative Team</span></h2>
-	    				<p>We are committed to providing first-class services to the writers who trust us</p>
-	    			</div>
-	    		</div>
-	    		<!-- Main Heading -->
-
-	    		<!-- Partners Logos -->
-		        <ul class="logos-slider">
-		          	<li><img src="images/partners/img-01.jpg" alt=""></li>
-		          	<li><img src="images/partners/img-02.jpg" alt=""></li>
-		          	<li><img src="images/partners/img-03.jpg" alt=""></li>
-		          	<li><img src="images/partners/img-04.jpg" alt=""></li>
-		          	<li><img src="images/partners/img-05.jpg" alt=""></li>
-		          	<li><img src="images/partners/img-06.jpg" alt=""></li>
-		        </ul>
-		        <!-- Partners Logos -->
-
-	      	</div>
-	    </section>
-	    <!-- Partners -->
-	    
-	    <!-- Call Action -->
-	    <section class="call-action">
-	      	<div class="container">  	
-	          	<div class="action-text">	
-	            	<h3>30% Off <span>Onlinebookshop</span> Top 100 Bestsellers</h3>
-	            	<strong>Get the bestselling books of 2016 and save!</strong>
-	          	</div>
-	          	<a class="btn-1 shadow-0" href="#">View Books</a>
-	      	</div>
-	    </section>
-	    <!-- Call Action --> 
 
 	</main>
 	<!-- Main Content -->
 
-	<!-- Footer -->
-	<footer id="footer"> 
-
-	    <!-- Footer columns -->
-	    <div class="footer-columns">
-	    	<div class="container">
-
-	    		<!-- Add banner -->
-	    		<div class="footer-ad-banner">
-	    			<a href="#"><img src="images/footer-ad-banner.jpg" alt=""></a>
-	    		</div>
-	    		<!-- Add banner -->
-
-	    		<!-- Columns Row -->
-	    		<div class="row">
-	    			
-		    		<!-- Footer Column -->
-		    		<div class="col-lg-4 col-sm-6">
-		    			<div class="footer-column logo-column">
-		    				<a href="index-1.html"><img src="images/logo-2.png" alt=""></a>
-		    				<p>Find out how to prepare your book for an editor with these 4 writing tips! The editing process can be a wonderful opportunity for writers.</p>
-		    				<ul class="address-list">
-		    					<li><i class="fa fa-home"></i>888 South Avenue Street, New York City.</li>
-		    					<li><i class="fa fa-phone"></i>00+123-456-789</li>
-		    					<li><i class="fa fa-envelope"></i>contact@onlinbookshops.com</li>
-		    				</ul>
-		    			</div>
-		    		</div>
-		    		<!-- Footer Column -->
-
-		    		<!-- Footer Column -->
-		    		<div class="col-lg-2 col-sm-6">
-		    			<div class="footer-column footer-links">
-		    				<h4>Information</h4>
-		    				<ul>
-		    					<li><a href="#">Home</a></li>
-		    					<li><a href="#">shop</a></li>
-		    					<li><a href="#">blog</a></li>
-		    					<li><a href="#">categories</a></li>
-		    					<li><a href="#">Pages</a></li>
-		    					<li><a href="#">contact</a></li>
-		    				</ul>
-		    			</div>
-		    		</div>
-		    		<!-- Footer Column -->
-
-		    		<!-- Footer Column -->
-		    		<div class="col-lg-2 col-sm-6">
-		    			<div class="footer-column footer-links">
-		    				<h4>Shipping info</h4>
-		    				<ul>
-		    					<li><a href="#">New Products</a></li>
-		    					<li><a href="#">top Sellers</a></li>
-		    					<li><a href="#">Manufactirers</a></li>
-		    					<li><a href="#">Suppliers</a></li>
-		    					<li><a href="#">Special</a></li>
-		    					<li><a href="#">Imported</a></li>
-		    				</ul>
-		    			</div>
-		    		</div>
-		    		<!-- Footer Column -->
-
-						<!-- Footer Column -->
-						<div class="col-lg-4 col-sm-6">
-							<div class="footer-column newsletter">
-								<h4>Weekly Newsletter</h4>
-								<p>Get our awesome releases and latest updates with exclusive news and offers in your inbox.</p>
-								<form class="newsletter-input">
-									<i class="fa fa-envelope-o"></i>
-									<input class="form-control.newsletter" type="text" placeholder="Enter Your Email">
-									<button>SUBSCRIBE</button>
-								</form>
-								<p>We're on Social Networks. Follow us &amp; get in touch!</p>
-								<ul class="social-icons">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
-									<li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- Footer Column -->
-
-	    		</div>
-	    		<!-- Columns Row -->
-
-	    	</div>
-	    </div>
-	    <!-- Footer columns -->
-	    
-	    <!-- Sub Footer -->
-	   	<div class="sub-foorer">
-	   		<div class="container">
-	   			<div class="row">
-		   			<div class="col-sm-6">
-		   				<p>Copyright <i class="fa fa-copyright"></i> 2005-2016 <span class="theme-color">FineLayers</span> All Rights Reserved.</p>
-		   			</div>
-		   			<div class="col-sm-6">
-		   				<a class="back-top" href="#">Back to Top<i class="fa fa-caret-up"></i></a>
-		   				<ul class="cards-list">
-		   					<li><img src="images/cards/img-01.jpg" alt=""></li>
-		   					<li><img src="images/cards/img-02.jpg" alt=""></li>
-		   					<li><img src="images/cards/img-03.jpg" alt=""></li>
-		   					<li><img src="images/cards/img-04.jpg" alt=""></li>
-		   				</ul>
-		   			</div>
-	   			</div>
-	   		</div>
-	   	</div>
-	    <!-- Sub Footer -->
-
-	</footer>
-	<!-- Footer -->
-
-</div>
-<!-- Wrapper -->
-
-<!-- Slide Menu -->
-<nav id="menu" class="responive-nav">
-	<a class="r-nav-logo" href="index.html"><img src="images/logo-1.png" alt=""></a>
-	<ul class="respoinve-nav-list">
-		<li>
-			<a class="triple-eff" data-toggle="collapse" href="#list-1"><i class="pull-right fa fa-angle-down"></i>Home</a>
-			<ul class="collapse" id="list-1">
-				<li><a href="index.html">home 1</a></li>
-				<li><a href="index-2.html">home 2</a></li>
-			</ul>
-		</li>
-		<li>
-			<a class="triple-eff" data-toggle="collapse" href="#list-2"><i class="pull-right fa fa-angle-down"></i>Shop</a>
-			<ul class="collapse" id="list-2">
-				<li><a href="shop.html">shop</a></li>
-				<li><a href="shop-detail.html">shop Detail</a></li>
-			</ul>
-		</li>
-		<li>
-			<a class="triple-eff" data-toggle="collapse" href="#list-3"><i class="pull-right fa fa-angle-down"></i>Blog</a>
-			<ul class="collapse" id="list-3">
-				<li><a href="blog-all-views.html">blog all views</a></li>
-				<li><a href="blog-larg.html">blog Larg</a></li>
-				<li><a href="blog-list.html">blog List</a></li>
-				<li><a href="blog-grid.html">blog Grid</a></li>
-				<li><a href="blog-detail.html">blog detail</a></li>
-			</ul>
-		</li>
-		<li>
-			<a class="triple-eff" data-toggle="collapse" href="#list-4"><i class="pull-right fa fa-angle-down"></i>Pages</a>
-			<ul class="collapse" id="list-4">
-				<li><a href="about.html">about</a></li>
-				<li><a href="gallery.html">gallery</a></li>
-				<li><a href="event-list.html">event list</a></li>
-				<li><a href="event-detail.html">event detail</a></li>
-				<li><a href="book-list.html">blog list</a></li>
-				<li><a href="book-detail.html">book detail</a></li>
-				<li><a href="404.html">404</a></li>
-			</ul>
-		</li>
-		<li>
-			<a class="triple-eff" data-toggle="collapse" href="#list-5"><i class="pull-right fa fa-angle-down"></i>author</a>
-			<ul class="collapse" id="list-5">
-				<li><a href="author.html">author</a></li>
-				<li><a href="author-detail.html">author detail</a></li>
-			</ul>
-		</li>
-		<li><a href="contact.html">Contact</a></li>                       
-	</ul>
-</nav>
-<!-- Slide Menu -->
-
-<!-- View Pages -->
-<div class="modal fade open-book-view" id="open-book-view" role="dialog">
-  	<div class="position-center-center" role="document">
- 	   	<div class="modal-content">
- 	   		<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	    	<div id="magazine">
-				<div style="background-image:url(images/pages/01.jpg);"></div>
-				<div style="background-image:url(images/pages/02.jpg);"></div>
-				<div style="background-image:url(images/pages/03.jpg);"></div>
-				<div style="background-image:url(images/pages/04.jpg);"></div>
-				<div style="background-image:url(images/pages/04.jpg);"></div>
-				<div style="background-image:url(images/pages/05.jpg);"></div>
-				<div style="background-image:url(images/pages/05.jpg);"></div>
-				<div style="background-image:url(images/pages/06.jpg);"></div>
-			</div>
-    	</div>
-  	</div>
-</div>
-<!-- View Pages -->
 
 
 <!-- Login Modal -->
@@ -703,6 +350,8 @@
 	</div>
 </div>
 <!-- Login Modal -->
+
+
 
 
 <!-- Register Modal -->
@@ -755,9 +404,6 @@
 	</div>
 </div>
 <!-- Quit Modal -->
-
-
-
 <!-- Quick View -->
 <div class="modal fade quick-view" id="quick-view" role="dialog">
 	<div class="position-center-center" role="document">
@@ -819,36 +465,36 @@
 </div>
 <!-- Quick View -->
 
+
 <!-- Java Script -->
-<script src="js/vendor/jquery.js"></script>        
-<script src="js/vendor/bootstrap.min.js"></script>
-<script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
-<script src="js/gmap3.min.js"></script>			
-<script src="js/datepicker.js"></script>					
-<script src="js/contact-form.js"></script>					
-<script src="js/bigslide.js"></script>					
-<script src="js/3d-book-showcase.js"></script>					
-<script src="js/turn.js"></script>							
-<script src="js/jquery-ui.js"></script>								
-<script src="js/mcustom-scrollbar.js"></script>					
-<script src="js/timeliner.js"></script>					
-<script src="js/parallax.js"></script>			   	 
-<script src="js/countdown.js"></script>	
-<script src="js/countTo.js"></script>		
-<script src="js/owl-carousel.js"></script>	
-<script src="js/bxslider.js"></script>	
-<script src="js/appear.js"></script>		 		
-<script src="js/sticky.js"></script>			 		
-<script src="js/prettyPhoto.js"></script>			
-<script src="js/isotope.pkgd.js"></script>					 
-<script src="js/wow-min.js"></script>			
-<script src="js/classie.js"></script>					
-<script src="js/main.js"></script>	
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/gmap3.min.js' %}"></script>
+<script src="{% static 'js/datepicker.js' %}"></script>
+<script src="{% static 'js/contact-form.js' %}"></script>
+<script src="{% static 'js/bigslide.js' %}"></script>
+<script src="{% static 'js/3d-book-showcase.js' %}"></script>
+<script src="{% static 'js/turn.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/mcustom-scrollbar.js' %}"></script>
+<script src="{% static 'js/timeliner.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
+<script src="{% static 'js/countdown.js' %}"></script>
+<script src="{% static 'js/countTo.js' %}"></script>
+<script src="{% static 'js/bxslider.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/sticky.js' %}"></script>
+<script src="{% static 'js/prettyPhoto.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.js' %}"></script>
+<script src="{% static 'js/wow-min.js' %}"></script>
+<script src="{% static 'js/classie.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 <script src="{% static 'js/LoginRegister.js' %}"></script>
+
 <!-- Switcher JS -->
-<script type="text/javascript" src="switcher/cookie.js"></script>
-<script type="text/javascript" src="switcher/colorswitcher.js"></script>
-<!-- Switcher JS -->
+<script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/colorswitcher.js' %}"></script>
+
 						
 </body>
 </html>

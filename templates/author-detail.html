@@ -179,7 +179,7 @@
 
 							<!-- Widget -->
 							<div class="single-arthor-widget" >
-								<h4><strong>Author Overview</strong></h4> 
+								<h4><strong>作家简介</strong></h4>
 								<div class="author-overview" id="author-overview">
 								</div>
 							</div>
@@ -201,7 +201,7 @@
 
 							<!-- Widget -->
 							<div class="single-arthor-widget">
-								<h5><i class="fa fa-graduation-cap"></i><strong>>Author Overview</strong></h5>
+								<h5><i class="fa fa-graduation-cap"></i><strong>>作家生平</strong></h5>
 								<div class="author-p-detail" id="author-p-detail">
 								</div>
 							</div>
@@ -220,40 +220,57 @@
 	<!-- Main Content -->
 
 
-<!-- Login Modal -->
-<div class="modal fade login-modal" id="login-modal" role="dialog">
+
+<!-- Register Modal -->
+<div class="modal fade login-modal" id="register-modal" role="dialog">
 	<div class="position-center-center" role="document">
 		<div class="modal-content">
 			<strong>Register</strong>
 			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<div class="social-options">
-				<ul>
-					<li><a class="facebook" href="#"><i class="fa fa-facebook"></i>Register with facebook</a></li>
-					<li><a class="twitter" href="#"><i class="fa fa-twitter"></i>Register with twitter</a></li>
-					<li><a class="google" href="#"><i class="fa fa-google-plus"></i>Register with gmail+</a></li>
-				</ul>
+
+			<div class="sending-form" >
+				<div class="form-group">
+					<input class="form-control" required="required" placeholder="Username" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" required="required"  placeholder="Email" >
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type=
+                            "password" required="required"  placeholder="Password">
+					<i class="fa fa-user"></i>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password"  required="required"  placeholder="PasswordAgain">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="terms">注册前请阅读 <a href="#">用户须知</a></p>
+				<button id="btn_register"   class="btn-1 shadow-0 full-width" >Register account</button>
 			</div>
-			<form class="sending-form">
-				<div class="form-group">
-					<input class="form-control" required="required" placeholder="Full name">
-					<i class="fa fa-user"></i>
-				</div>
-				<div class="form-group">
-					<input class="form-control" required="required" placeholder="Email Address">
-					<i class="fa fa-user"></i>
-				</div>
-				<div class="form-group">
-					<input class="form-control" type="password" required="required" placeholder="Password">
-					<i class="fa fa-user"></i>
-				</div>
-				<p class="terms">You agree to the hldy.hr <a href="#">Terms &amp; Conditions</a></p>
-				<button class="btn-1 shadow-0 full-width">Register account</button>
-			</form>
 		</div>
 	</div>
 </div>
-<!-- Login Modal -->
+<!-- Register Modal -->
 
+<!-- Quit Modal -->
+<!--modal和fade是bootstrap中的插件，modal是模块框，fade使弹出时有淡出淡入的效果，login-modal为style.css中定义的模块样式-->
+<div class="modal fade login-modal" id="quit-modal" role="dialog">
+	<div class="position-center-center" role="document">
+		<div class="modal-content">
+			<strong>用户信息</strong>
+			<button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+				<p class="terms">用户名:&#12288;<span id="user_name">user</span></p>
+				<p class="terms">邮&#12288;箱:&#12288;<span id="user_email">user@Qq.com</span></p>
+				<p class="terms">权&#12288;限&#12288;<span id="is_admin">普通用户</span></p>
+				<button id="quit_login" class="btn-1 shadow-0 full-width">退出登陆</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Quit Modal -->
 <!-- Quick View -->
 <div class="modal fade quick-view" id="quick-view" role="dialog">
 	<div class="position-center-center" role="document">
@@ -597,13 +614,13 @@
 					"<li><i class=\"fa fa-heart\"></i>"+html[id].collection+"</li>"+
 					"<li><i class=\"fa fa-comment\"></i>"+html[id].message+"</li>"+
 				"</ul>"+
-				"<p>Saturday Paper, Book Review and Overland. Our Magic Hour, debut novel  was shortlisted for the 2014 Victorian.</p>"+
+
 				"<div>"+
 					"<ul class=\"social-icons\">"+
-						"<li><a class=\"facebook\" href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>"+
-						"<li><a class=\"twitter\" href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>"+
-						"<li><a class=\"youtube\" href=\"#\"><i class=\"fa fa-youtube-play\"></i></a></li>"+
-						"<li><a class=\"pinterest\" href=\"#\"><i class=\"fa fa-pinterest-p\"></i></a></li>"+
+						"<li><a class=\"facebook\" href=\"#\"><i class=\"fa fa-qq\"></i></a></li>"+
+						"<li><a class=\"twitter\" href=\"#\"><i class=\"fa fa-wechat\"></i></a></li>"+
+						"<li><a class=\"youtube\" href=\"#\"><i class=\"fa fa-google-plus\"></i></a></li>"+
+						"<li><a class=\"pinterest\" href=\"#\"><i class=\"fa fa-weibo\"></i></a></li>"+
 					"</ul>"+
 				"</div>"+
 			"</div>"
@@ -614,15 +631,15 @@
 		$('#author-p-detail').append(
 			"<ul>"+
 				"<li>"+
-					"<h6><i class=\"fa fa-circle\"></i><span>O Level</span> 1978-1980 Global Universities</h6>"+
+					"<h6><i class=\"fa fa-circle\"></i><span>早年经历</span> </h6>"+
 				"<p>"+html[id].message1+"</p>"+
 				"</li>"+
 				"<li>"+
-					"<h6><i class=\"fa fa-circle\"></i><span>Master in Fine Arts</span> 1982-1985 Harvard</h6>"+
+					"<h6><i class=\"fa fa-circle\"></i><span>中年经历</span> </h6>"+
 					"<p>"+html[id].message2+"</p>"+
 				"</li>"+
 				"<li>"+
-					"<h6><i class=\"fa fa-circle\"></i><span>Degree in Journlist </span> 1990-1994 Oxford</h6>"+
+					"<h6><i class=\"fa fa-circle\"></i><span>晚年经历 </span></h6>"+
 					"<p>"+html[id].message3+"</p>"+
 				"</li>"+
 		    "</ul>"

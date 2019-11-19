@@ -56,7 +56,7 @@ jQuery( document ).ready(function() {
                 num_of_books=5;
               $("div.upcoming-slider").find("div.item").each(function () {
                   $(this).find("img.book_image").attr("src",data.book_image[num_of_books]);
-                  $(this).find("a.book_name").text(data.book_name[num_of_books].substring(0,maxlen)+ "...");
+                  $(this).find("a.book_name").text(data.book_name[num_of_books].substring(0,10)+ "...");
                   $(this).find("p.book_describe").text(data.book_describe[num_of_books].substring(0,maxlen)+ "...");
                   $(this).find("span.book_price").text(data.book_price[num_of_books]);
                   num_of_books++;

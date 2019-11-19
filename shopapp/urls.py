@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^author-detail/$', views.author_detail),
     url(r'^about/$', views.about),
     url(r'^cart/$', views.cart),
+    url(r'^about/$', views.about),
     #管理员界面的路由
     url(r'^book_admin/$', views.admin),
     url(r'^book-fd.html/$', views.book_fd),
